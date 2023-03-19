@@ -1,0 +1,8 @@
+---
+title: "Introduction"
+---
+
+
+```{r embed-xaringan, echo=FALSE, fig.cap="[Slides](ST_et_DataScience.html)"}
+xaringanExtra::embed_xaringan(url = "ST_et_DataScience.html", ratio = "16:9")
+```
