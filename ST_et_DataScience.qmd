@@ -13,6 +13,7 @@ format:
 -   Corpus et Tableaux lexicaux
 -   Méthodologie embarquée (dans R)
 -   Application avec des réponses à une question ouverte issue de l'enquête "[Population, Espace de Vie, Environnement](https://data.ined.fr/index.php/catalog/41)" (Collomb, Guerin-Pace, Ined, 1992)
+-   Illustrations à partir Garnier B., Guérin-Pace F. 2010 - Appliquer les méthodes de la statistique textuelle, \[[Ceped, les clefs pour](http://www.ceped.org/fr/publications-ressources/editions-du-ceped-1988-2012/les-clefs-pour/article/appliquer-les-methodes-de-la)\], Paris
 
 ------------------------------------------------------------------------
 
@@ -33,6 +34,8 @@ mais aussi :
 ## Place de la Statistique textuelle
 
 et si on allait voir ce que dit [Wikipedia](https://fr.wikipedia.org/wiki/Science_des_donn%C3%A9es) sur la Science de la donnée
+
+![](images/wiki_DS.png){fig-align="center" width="642"}
 
 ------------------------------------------------------------------------
 
@@ -74,9 +77,11 @@ Les méthodes s'appliquent à des corpus qui diffèrent par leur nature mais qui
 
 ------------------------------------------------------------------------
 
-## Usage croissant de la statistique textuelle
+## Usage croissant
 
-## <img src="images/im_chronologie.png" height="450px"/>
+<img src="images/im_chronologie.png" width="683" height="500"/>
+
+------------------------------------------------------------------------
 
 ## Text Mining
 
@@ -130,7 +135,9 @@ Textes et metadonnées = nettoyer, normaliser, corriger ( encodage, orthographe,
 
 ## Le tableau lexical *entier* (TLE)
 
-![](images/TLE_PEE.png)Tableaux dits *hyper-creux*. Présence/absence de **mots** dans les textes (Valeur positive ou nulle). L'ordre des mots n'est pas pris en compte (sacs de mots)
+![](images/TLE_PEE_o.png){fig-align="center" width="538"}
+
+Tableaux dits *hyper-creux*. Présence/absence de **mots** dans les textes (Valeur positive ou nulle). L'ordre des mots n'est pas pris en compte (sacs de mots)
 
 ------------------------------------------------------------------------
 
@@ -182,17 +189,19 @@ Les plans factoriels permettent de visualiser des proximités de mots, des oppos
 
 Méthode Alceste ( Reinert, 1983), aujourd'hui implantée dans le *package Rainette* (J. Barnier)
 
-|                                           |
-|:------------------------------------------|
-| \# Mettre en relation mots et métadonnées |
+------------------------------------------------------------------------
+                                         
+# Mettre en relation mots et métadonnées
 
-# Les spécificités
+------------------------------------------------------------------------
 
-Les textes sont répartis selon les modalités d'une métadonnée et le vocabulaire de chacune de ces partitions est comparé au vocabulaire d'ensemble afin de repérer les *mots* spécifiques
+## Les spécificités
 
-Utilisation d'un test statistique (valeur-test) pour dire si l'écart entre la fréquence relative d'une forme dans une partie et la fréquence globale calculée sur l'ensemble des réponses est significatif ou non
+Utilisation d'un test statistique pour dire si l'écart entre la fréquence relative d'une forme dans une partition (*par modalité*) et la fréquence globale calculée sur l'ensemble des réponses est significatif ou non
 
-les *mots ou textes caractéristiques* de ces partitions sont restitués selon leur degré de spécificité (valeur-test décroissante)
+![](images/specif.png){fig-align="center" width="429"}
+
+les *mots ou textes caractéristiques* de ces partitions sont restitués selon leur degré de spécificité
 
 ------------------------------------------------------------------------
 
@@ -200,7 +209,7 @@ les *mots ou textes caractéristiques* de ces partitions sont restitués selon l
 
 Tableau de *contingence* qui croise les *mots* du lexique et les *modalités* des métadonnées.
 
-![](images/TLA_PEE.png){fig-align="center"}
+![](images/TLA_PEE.png){fig-align="center" width="960"}
 
 (Population, Espace de vie, Environnement,Ined)
 
@@ -219,9 +228,10 @@ Le plan factoriel permet d'observer la position réciproque des "mots" et des m�
 
 ## Affiner l'analyse
 
--   Supprimer certains mots ....
--   Personnaliser la lemmatisation .....
--   Extraire des sous-corpus à l'aide metadonnées
+- Supprimer certains mots ....
+- Augmenter le nombre de classes
+- Personnaliser la lemmatisation .....
+- Extraire des sous-corpus à l'aide metadonnées
 
 ------------------------------------------------------------------------
 
@@ -229,9 +239,7 @@ Le plan factoriel permet d'observer la position réciproque des "mots" et des m�
 
 Liste non exhaustive
 
-<center><img src="images/im_outils.png" height="400px"/></center>
-
-et aussi la plateforme *TXM* et les packages *Quanteda*, *xplortext* ...
+![](images/im_outils.png){fig-align="center" height="400"}
 
 ------------------------------------------------------------------------
 
@@ -246,9 +254,7 @@ Feinerer, Hornik, Meyer Wirtschaftsuniversity de Wien, in Journal of Statistical
 
 ## Package R.temis de R
 
-Facilite les étapes essentielles de l'analyse textuelle en s'appuyant au maximum sur les packages existants (tm, FactoMineR, explor, igraph...)
-
-[R.Temis](https://rtemis.hypotheses.org/) implémente les méthodes suivantes :
+Facilite les étapes essentielles de l'analyse textuelle en s'appuyant au maximum sur les packages existants (tm, FactoMineR, explor, igraph...). [R.Temis](https://rtemis.hypotheses.org/) implémente les méthodes suivantes :
 
 -   importation de corpus au format .csv, .txt, Alceste
 -   suppression des mots vides,
@@ -258,7 +264,7 @@ Facilite les étapes essentielles de l'analyse textuelle en s'appuyant au maximu
 -   détection de cooccurrences,
 -   construction de sous-corpus à partir de termes
 -   découpage des textes en paragraphes
--   analyse des correspondances sur tableau lexical entier ou agrégé
+-   analyse des correspondances sur tableau lexical
 -   classification
 -   graphes de mots
 
@@ -266,11 +272,9 @@ Facilite les étapes essentielles de l'analyse textuelle en s'appuyant au maximu
 
 ## Conclusion
 
--   Statistique textuelle à l'honneur
 -   Analyse de données (non structurées)
 -   Explorer les données autrement - sans a priori
 -   Complémentarité des méthodes (qualitative/quantitative)
--   Exploration ultra-rapide des corpus mais pré connaissance du corpus irremplaçable pour faire des choix de paramétrage et interpréter les résultats produits
 -   Utilisation conjointe de l'informatique tout-automatique et de l'intuition humaine
 
 ------------------------------------------------------------------------
