@@ -183,29 +183,29 @@ et aussi le <em>Pas à Pas montrant toutes les fonctionnalités de R.temis</em> 
 <h2 class="anchored" data-anchor-id="etape-2-importer-les-données-dans-r">Etape 2 : Importer les données dans R</h2>
 <p>On importe ce fichier contenant une variable textuelle et des métadonnées dans R avec le <em>package R.temis</em><strong>.</strong></p>
 <ol type="1">
-<li><p>Importer le fichier [<em>import_corpus</em>].</p></li>
-<li><p>Créer le tableau lexical (avec mots-outils) [<em>build_dtm</em>].</p></li>
+<li><p>Importer le fichier <code>import_corpus</code>.</p></li>
+<li><p>Créer le tableau lexical (avec mots-outils) <code>build_dtm</code>.</p></li>
 <li><p>Repérer le nombre de répondants et le nombre de mots différents cités dans les réponses.</p></li>
-<li><p>Créer le dictionnaire [<em>dictionary</em>] puis le visualiser [<em>View</em>]. Le trier, repérer les mots les plus cités, les lemmes générés par R.</p></li>
-<li><p>Afficher des concordances avec des mots (au choix) [<em>concordances</em>].</p></li>
-<li><p>Afficher le nuage de mots associés au lexique [<em>word_cloud</em>]. Faire ce nuage de mots avec et sans les mots-outils. Calculer les éléments qui permettront d’ajouter une légende[<em>frequent_terms</em>].</p></li>
+<li><p>Créer le dictionnaire <code>dictionary</code> puis le visualiser <code>View</code>. Le trier, repérer les mots les plus cités, les lemmes générés par R.</p></li>
+<li><p>Afficher des concordances avec des mots (au choix) <code>concordances</code>.</p></li>
+<li><p>Afficher le nuage de mots associés au lexique <code>word_cloud</code>. Faire ce nuage de mots avec et sans les mots-outils. Calculer les éléments qui permettront d’ajouter une légende <code>frequent_terms</code>.</p></li>
 </ol>
 </section>
 <section id="etape-3-reprérer-des-cooccurrences" class="level2">
 <h2 class="anchored" data-anchor-id="etape-3-reprérer-des-cooccurrences">Etape 3 : Reprérer des cooccurrences</h2>
 <ol type="1">
-<li><p>Chercher des cooccurrences à certains mots (au choix) [<em>cooc_terms</em>].</p></li>
-<li><p>Produire un graphe de mots pour détecter les cooccurrences autour des mots les plus fréquents [<em>terms_graph</em>]. Que remarquez-vous ?</p></li>
-<li><p>Faire une analyse factorielle sur le tableau lexical [<em>corpus_ca</em>] puis explorer les résulats avec l’interface [<em>explor</em>]. Afficher des concordances [<em>concordances</em>].</p></li>
+<li><p>Chercher des cooccurrences à certains mots (au choix) <code>cooc_terms</code>.</p></li>
+<li><p>Produire un graphe de mots pour détecter les cooccurrences autour des mots les plus fréquents <code>terms_graph</code>. Que remarquez-vous ?</p></li>
+<li><p>Faire une analyse factorielle sur le tableau lexical <code>corpus_ca</code> puis explorer les résulats avec l’interface <code>explor</code>. Afficher des concordances <code>concordances</code>.</p></li>
 </ol>
 </section>
 <section id="etape-4-utiliser-les-métadonnées" class="level2">
 <h2 class="anchored" data-anchor-id="etape-4-utiliser-les-métadonnées">Etape 4 : Utiliser les métadonnées</h2>
 <ol type="1">
-<li><p>Visualiser le tableau des métadonnnées [<em>View(meta(corpus))</em>] Intaller le <em>package questionr</em> puis compter le nombre de répondants selon 3 métadonnées (au choix).</p></li>
-<li><p>Faire le bilan lexical pour au moins une métadonnée (au choix)[<em>lexical_summary</em>].</p></li>
-<li><p>Repérer le vocabulaire spécifique pour quelques métadonnées (au choix)[<em>specific_terms</em>].</p></li>
-<li><p>Faire une analyse factorielle sur le tableau croisant les mots du lexique et des caractéristiques des répondants (au choix) [<em>corpus_ca</em>]. Explorer les résulats [<em>explor</em>]. Afficher des concordances [<em>concordances</em>], des réponses spécifiques [<em>extreme_docs</em>].</p></li>
+<li><p>Visualiser le tableau des métadonnnées <code>View(meta(corpus))</code>. Intaller le <em>package questionr</em> puis compter le nombre de répondants selon 3 métadonnées (au choix).</p></li>
+<li><p>Faire le bilan lexical pour au moins une métadonnée (au choix)<code>lexical_summary</code>.</p></li>
+<li><p>Repérer le vocabulaire spécifique pour quelques métadonnées (au choix)<code>specific_terms</code>.</p></li>
+<li><p>Faire une analyse factorielle sur le tableau croisant les mots du lexique et des caractéristiques des répondants (au choix) <code>corpus_ca</code>. Explorer les résulats <code>explor</code>. Afficher des concordances <code>concordances</code>, des réponses spécifiques <code>extreme_docs</code>.</p></li>
 </ol>
 </section>
 <section id="etape-5-lemmatiser" class="level2">
@@ -214,7 +214,7 @@ et aussi le <em>Pas à Pas montrant toutes les fonctionnalités de R.temis</em> 
 <section id="avec-un-lemmatiseur-personnalisé" class="level3">
 <h3 class="anchored" data-anchor-id="avec-un-lemmatiseur-personnalisé">Avec un lemmatiseur personnalisé</h3>
 <ol type="1">
-<li><p>Créer une la liste de mots à enlever du corpus (prendre ici : “sur”,“que”,“qu”). La supprimer du tableau lexical et du lexique, puis exporter le dictionnaire [dictionary].</p></li>
+<li><p>Créer une la liste de mots à enlever du corpus (prendre ici : “sur”,“que”,“qu”). La supprimer du tableau lexical et du lexique, puis exporter le dictionnaire <code>dictionary</code>.</p></li>
 <li><p>Ouvrir ce dictionnaire avec un tableur. Corrigez si besoin les formes lemmatisées automatiquement par R.</p></li>
 <li><p>Ouvrir le lemmatiseur “associé à Pee” (<strong>Pee_dic_lem_extract.csv)</strong> et le copier dans le répertoire data du dossier créé pour l’analyse.</p></li>
 </ol>
@@ -225,10 +225,10 @@ et aussi le <em>Pas à Pas montrant toutes les fonctionnalités de R.temis</em> 
 </a>
 </div>
 </div>
-<p>4. Puis l’importer dans le projet (toujours le répertoire data) [<em>read.csv2</em>]</p>
+<p>4. Puis l’importer dans le projet (toujours le répertoire data) <code>read.csv2</code>.</p>
 <ol start="5" type="1">
-<li>Lemmatiser le tableau lexical à l’aide de ce lemmatiseur [<em>combine_terms</em>]</li>
-<li>Compter le nombre de mots distincts restants après cette lemmatisation par exemple avec [<em>lexical_summary</em>]</li>
+<li>Lemmatiser le tableau lexical à l’aide de ce lemmatiseur <code>combine_terms</code>.</li>
+<li>Compter le nombre de mots distincts restants après cette lemmatisation par exemple avec <code>lexical_summary</code></li>
 <li>Excécuter des analyses précédentes avec ce nouveau lexique</li>
 </ol>
 </section>
@@ -253,7 +253,7 @@ et aussi le <em>Pas à Pas montrant toutes les fonctionnalités de R.temis</em> 
 <section id="etape-6-classer-les-réponses" class="level2">
 <h2 class="anchored" data-anchor-id="etape-6-classer-les-réponses">Etape 6 : Classer les réponses</h2>
 <ul>
-<li>Faire une classification sur le tableau lexical associé aux réponses avec [<em>corpus_ca</em>]. Décrire les classe [specific_terms] puis joindre exporter la variable de classe aux metadonnées..</li>
+<li>Faire une classification sur le tableau lexical associé aux réponses avec <code>corpus_ca</code>. Décrire les classe <code>specific_terms</code> puis joindre exporter la variable de classe aux metadonnées..</li>
 </ul>
 </section>
 <section id="etape-7-aller-plus-loin" class="level2">
