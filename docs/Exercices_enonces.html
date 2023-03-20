@@ -164,14 +164,10 @@ et aussi le <em>Pas à Pas montrant toutes les fonctionnalités de R.temis</em> 
 <h2 class="anchored" data-anchor-id="etape-1-créer-son-environnement-de-travail">Etape 1 : Créer son environnement de travail</h2>
 <ol type="1">
 <li><p>Créer un répertoire/dossier pour l’analyse sur votre ordinateur. Dans ce dossier, créér un sous répertoire appelé par exemple <em>data</em> pour y placer les données à utiliser.</p></li>
-<li><p>Installer si nécessaire le <em>package downloadthis.</em></p></li>
 <li><p>Créer un projet R dans le dossier de l’analyse [<em>File/New Project</em> …]. Créer un script [<em>File/New File</em> …].</p></li>
 <li><p>Visualiser les données extraites de l’enquête PEE (textes et métadonnées) (<strong>PEE_K1_extract.csv</strong><em>)</em> et copiez-les dans le répertoire <em>data.</em></p></li>
 </ol>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: le package 'downloadthis' a été compilé avec la version R 4.1.3</code></pre>
-</div>
 <div class="cell-output-display">
 <a href="https://github.com/benegarbi/AtelierQO_R/tree/main/data">
 <button class="btn btn-default"><i class="fa fa-save"></i> visualiser les données puis copier-coller dans un éditeur de texte</button>
@@ -202,7 +198,7 @@ et aussi le <em>Pas à Pas montrant toutes les fonctionnalités de R.temis</em> 
 <section id="etape-4-utiliser-les-métadonnées" class="level2">
 <h2 class="anchored" data-anchor-id="etape-4-utiliser-les-métadonnées">Etape 4 : Utiliser les métadonnées</h2>
 <ol type="1">
-<li><p>Visualiser le tableau des métadonnnées <code>View(meta(corpus))</code>. Intaller le <em>package questionr</em> puis compter le nombre de répondants selon 3 métadonnées (au choix).</p></li>
+<li><p>Visualiser le tableau des métadonnnées <code>View(meta(corpus))</code>. Compter le nombre de répondants(<em>package questionr</em>) selon 3 métadonnées (au choix).</p></li>
 <li><p>Faire le bilan lexical pour au moins une métadonnée (au choix)<code>lexical_summary</code>.</p></li>
 <li><p>Repérer le vocabulaire spécifique pour quelques métadonnées (au choix)<code>specific_terms</code>.</p></li>
 <li><p>Faire une analyse factorielle sur le tableau croisant les mots du lexique et des caractéristiques des répondants (au choix) <code>corpus_ca</code>. Explorer les résulats <code>explor</code>. Afficher des concordances <code>concordances</code>, des réponses spécifiques <code>extreme_docs</code>.</p></li>
@@ -260,7 +256,7 @@ et aussi le <em>Pas à Pas montrant toutes les fonctionnalités de R.temis</em> 
 <h2 class="anchored" data-anchor-id="etape-7-aller-plus-loin">Etape 7 : Aller plus loin</h2>
 <ul>
 <li>Travailler sur des sous-corpus</li>
-<li>Utiliser le package Rainette pour faire la classification sur le tableau lexical <a href="https://juba.github.io/rainette/articles/introduction_usage.html" class="uri">https://juba.github.io/rainette/articles/introduction_usage.html</a> ………….</li>
+<li>Utiliser le <em>package Rainette</em> pour faire la classification sur le tableau lexical <a href="https://juba.github.io/rainette/articles/introduction_usage.html" class="uri">https://juba.github.io/rainette/articles/introduction_usage.html</a> ………….</li>
 </ul>
 
 
