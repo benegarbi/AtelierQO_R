@@ -10,9 +10,11 @@ library(R.temis)
 
 ## Données
 
-Le *corpus* utilisé dans cet exemple contient un extrait des réponses à une question ouverte issue de l'enquête Population, Espace de Vie, Environnement(Ined, 1992). L'intitulé de la question est celui-ci :*Si je vous dis environnement, qu'est ce que ce mot évoque pour vous ?*. Pour chaque Enquêté, on dispose des caractéristiques socio-démographiques (<https://data.ined.fr/index.php/catalog/41>).
+Le *corpus* utilisé dans cet exemple contient un extrait des réponses à une question ouverte issue de l'enquête Populations, Espaces de Vie, Environnements (Ined, 1992).  L'intitulé de la question est celui-ci :*Si je vous dis Environnement, qu'est ce que cela évoque pour vous ?*.
 
-Les données sont stockées dans un tableau dit *individus x variables* contenant 2017 lignes (le nombre de répondants) et 15 colonnes. Dans ces colonnes on trouve les variables caréctéristiques des répondants (appellées *métadonnées*) et en 15ème colonne la variable correspondant à la question ouverte (appellée *variable textuelle*). Les textes correspondants à l'ensemble des réponses correspondent au *corpus*.
+Pour chaque enquêté, on dispose de caractéristiques socio-démographiques (<https://data.ined.fr/index.php/catalog/41>).
+
+Les données sont stockées dans un tableau, dit *individus x variables*, contenant 2017 lignes (le nombre de répondants) et 15 colonnes. Ces colonnes correspondent aux variables suivantes : identifiant du questionnaire, caractéristiques des répondants (ou *métadonnées*) et en 15ème colonne la variable correspondant à la question ouverte ( *variable textuelle*). Les textes des réponses constituent le *corpus*.
 
 ```{r import}
 corpus <- import_corpus("data/PEE_K1_extract.csv", format="csv",textcolumn=15,language="fr")
@@ -20,14 +22,14 @@ corpus <- import_corpus("data/PEE_K1_extract.csv", format="csv",textcolumn=15,la
 
 # Création du tableau lexical
 
-La fonction `build_dtm` crée le tableau lexicval appellé "Document Term Matrix" dans R.
+La fonction `build_dtm` crée le tableau lexical (*Document Term Matrix* dans R).
 
 ```{r tle}
 dtm <-build_dtm(corpus, remove_stopwords=F,min_length=2)
 dtm
 ```
 
-Les lignes du *tableau lexical* correspondent ici aux 2017 réponses extraites de l'enquête ("Population, Espace de Vie, Environnement", Ined 1992) et les colonnes aux 1157 mots distincts du corpus.
+Les lignes du *tableau lexical* correspondent ici aux 2017 réponses extraites de l'enquête "Populations, Espaces de Vie, Environnements (PEE), Ined 1992) et les colonnes aux 1157 mots distincts du corpus.
 
 ## Affichage
 
@@ -47,9 +49,9 @@ inspect(dtm)
 
 ## Explorer le lexique
 
-La fonction `dictionary` permet de créer le dictionnaire que l'on peut explorer via RStudio : affichage des mots par ordre alphabétique ou par fréquence.
+La fonction `dictionary` crée le dictionnaire associé au lexique. On peut explorer via RStudio : affichage des mots par ordre alphabétique ou par fréquence.
 
-On peut afficher les mots les plus fréquent avec la fonction `frequent_terms`.
+On affiche la liste des mots les plus fréquents avec la fonction `frequent_terms`.
 
 ```{r freqT}
 dic<-dictionary(dtm,remove_stopwords = F)
@@ -57,32 +59,32 @@ dic<-dictionary(dtm,remove_stopwords = F)
 frequent_terms(dtm, n=20)
 ```
 
-Le mot *nature* est évoqué 888 fois dans cet extrait des réponses à la question ouverte et représente plus de 7% des occurrences.
+Le mot *nature* est évoqué 888 fois dans cet extrait des réponses à la question ouverte (PEE) et représente plus de 7% des occurrences.
 
-# Et afficher le nuage !
+# Afficher le nuage de mots !
 
-Ici on chosit d'afficher les mots de plus de 20 occurrences et ne pas afficher les mots outils (fonction `word_cloud`),
+Ici affiche les mots de plus de 20 occurrences et on choisit de ne pas afficher les mots-outils (fonction `word_cloud`),
 
 ```{r nuage}
 cloud<-word_cloud(dtm, color="black", n=100, min.freq=20,remove_stopwords=T)
 ```
 
-Les *fréquences* de quelques mots doivent être précisées dans la légende de ce graphique pour aider la compréhension du graphique.
+Les *occurrences* de quelques mots doivent être précisées dans la légende de ce graphique pour aider sa compréhension.
 
 # Concordances
 
-Les *concordances* permettent, pour chaque mot, de rassembler l'ensemble des textes (ici les questions ouvertes) dans lesquels il apparaît (fonction `concordances`).
+Les *concordances* permettent, pour chaque mot, de rassembler l'ensemble des textes (ici les réponses à la question ouverte) dans lesquels il apparaît (fonction `concordances`).
 
-Ici par exmple on cherche comprendre pourquoi le mot enquêté apparait dans les réponses.
+Ici par exemple on cherche comprendre pourquoi le mot *enquêté* apparait dans les réponses.
 
 ```{r concordances}
 concordances(corpus,dtm,"enquêté")
-concordances(corpus,dtm,"alentour")
+#concordances(corpus,dtm,"alentour")
 #concordances(corpus,dtm,"sur")
 #concordances(corpus,dtm,"que")
 ```
 
-On doit afficher les concordances à chaque étape d'interprétation des résultats.
+On doit *afficher les concordances à chaque étape* d'interprétation des résultats.
 
 # Cooccurrences
 
@@ -96,9 +98,11 @@ cooc_terms(dtm,"logement", n=10)
 
 Parmi les réponses contenant *logement*, *mon* représente 3,5% de l'ensemble des occurrences. Plus de 10% des occurrences de *mon* sont présentes quand *logement* est aussi donné dans les réponses.
 
+On verra par la suite qu'on peut produire un *graphe de mots*.
+
 ## Analyse factorielle sur un tableau lexical entier
 
-L'analyse factorielle sur un tableau lexical (TLE) met en évidence les mots les plus *cooccurrents*. La lecture des mots les plus contributifs aux axes et les concordances permet d'identifier des champs lexicaux. Par la suite, elle peut aider à de justifier (ou non) la lemmatisation de certains mots (partie suivante).
+L'analyse factorielle sur un tableau lexical met en évidence les mots les plus *cooccurrents*. La lecture des mots les plus contributifs aux axes et les concordances permettent d'identifier des champs lexicaux. Par la suite, elle peut aider à de justifier (ou non) la lemmatisation de certains mots (partie suivante).
 
 ```{r AFC_TLE}
 resTLE <-corpus_ca(corpus,dtm, sparsity=0.985)
@@ -111,17 +115,17 @@ explor::CA_var_plot(res, xax = 1, yax = 2, lev_sup = TRUE, var_sup = FALSE,
     xlim = c(-3, 2.91), ylim = c(-2.42, 3.49))
 ```
 
-Les aides à l'interprétation « classiques » (valeurs propres, contributions, coordonnées, ...) sont stockées dans *resTLE* que l'on explore avec grâce à la fonction `explor` (basée sur Shiny).
+Les aides à l'interprétation *classiques* (valeurs propres, contributions, coordonnées, ...) sont stockées dans *resTLE* que l'on explore avec grâce à la fonction `explor` (RShiny).
 
 # Mettre les QO en regard avec les métadonnées
 
-On dispose des variables suivantes : sexe aget matrim pratique enf activite prof dipl vote habitat localite revenu region
+On dispose des variables suivantes : sexe, age en classes (aget), situation matrimoniale(matrim), pratique religieuse (pratique), avoir des enfants oui/non(enf), activite, profession regroupée (prof), diplôme (dipl), *vote écolo* oui/non (vote), type d'habitat, type de localité (local), revenu, region.
 
 ## Répartitions
 
-On vérifie la répartition des caractéristiques des enquêté pour chaque modalités de métadonnées.
+Vérifie la répartition des caractéristiques des enquêté pour chaque métadonnée.
 
-```{r repart}
+```{r repart, eval=FALSE}
 library (questionr)
 
 table(meta(corpus)$sexe)
@@ -137,12 +141,11 @@ table(meta(corpus)$habitat)
 table(meta(corpus)$localite)
 table(meta(corpus)$revenu)
 table(meta(corpus)$region)
-
 ```
 
 ## Nombre de mots par sous-corpus
 
-Ici on compte les mots de chaque sous-corpus crée à parti de la variable Region d'enquête
+Ici on compte les mots de chaque sous-corpus crée à partir de la variable *Region* de l'enquête.
 
 ```{r BilanLex}
 lexical_summary(dtm, corpus,"region", unit = "global")           
@@ -163,7 +166,7 @@ Les mots *pollution* et *nature* sont plus employés par les répondants les plu
 
 ### Réponses spécifiques par modalités
 
-La fonction `characteristic_docs` affiche les documents représentatifs d'une catégorie donnée (de répondants, d'une classe...).
+La fonction `characteristic_docs` affiche les documents représentatifs d'une catégorie donnée de répondants ici.
 
 Remarque : Le calcul de la distance est fondé sur la métrique du Khi2 et mesure l'écart entre le profil d'un document et le profil moyen du document de la catégorie. Ce critère a tendance à favoriser les textes longs car plus ils contiennent de "mots", plus ils ont de chance de contenir de "mots" communs, et donc de se rapprocher du profil moyen.
 
@@ -176,7 +179,7 @@ characteristic_docs(corpus,dtm,meta(corpus)$region, ndocs=5)
 
 La fonction `corpus_ca` permet d'effectuer une AFC qui met en relation les "mots" et un ensemble de *variables qualitatives* (les métadonnées).
 
-On choisit les variables (ici sexe aget matrim pratique enf activite prof dipl vote habitat localite revenu) pour créer le tableau de contingence croisant les *mots* du corpus et les modalités des métadonnées sur lequel on calcule l'AFC.
+On choisit les variables (ici : sexe, aget, matrim, pratique, enf, activite, prof, dipl, vote, habitat, localite, revenu) pour créer le tableau de contingence croisant les *mots* du corpus et les modalités des métadonnées sur lequel on calcule l'AFC.
 
 ## Choix des metadonnées
 
@@ -191,7 +194,7 @@ explor::CA_var_plot(res, xax = 1, yax = 2, lev_sup = FALSE, var_sup = FALSE,
         0.447), ylim = c(-0.413, 0.426))
 ```
 
-On affiche les réponses les plus contributives aux axes (fonction `extreme_docs`).
+On affiche les réponses les plus contributives aux axes 1 à 3 (fonction `extreme_docs`).
 
 ```{r extr_doc}
 #Documents les plus illustratifs par axe
@@ -202,9 +205,9 @@ extreme_docs(corpus,resTLA,axis=3,ndocs=3)
 
 # Lemmatiser
 
-La lemmatisation (Lebart, Salem) consite à regrouper les mots qui ont une signification proche : les verbes congugués à la forme infinitive, les formes plurielles au singulier, les adjectifs du féminin au masculin. Cette opération permet de réduire la liste de mots distincts et donc la taille du lexique.
+La lemmatisation (Lebart, Salem) consite à regrouper les mots qui ont une signification proche. Cette opération permet de réduire la liste de mots distincts et donc la taille du lexique.
 
-Nous allons voir dans cette partie que cette opération peut de faire de différentes façon et nécessite de faire des choix ...
+Nous allons voir dans cette partie que cette opération peut se faire de différentes façons et nécessite de faire des choix ...
 
 ## De façon personnalisée
 
@@ -212,10 +215,11 @@ On voit ici comment créer son *lemmatiseur*.
 
 ### Suppression de mots
 
-On crée une liste de mots que l'on a choisi de supprimer du tableau lexical et aussi du dictinnaire.
+On crée une liste de mots que l'on a choisi de supprimer du tableau lexical et du dictinnaire.
 
-Ici, comme à tout moment de l'analyse, il est important d'afficher les *concordances* d'un mot pour ensuite faire un choix (le supprimer, interpréter, ... ).
+Ici, comme à tout moment de l'analyse, il est important d'afficher les *concordances* d'un mot pour ensuite faire un choix (le supprimer, le regrouper avec un autre, ...).
 
+Pour l'exemple, on supprime les mots *sur*, *que* et *qu*.
 ```{r nettoyage}
 #concordances(corpus,dtm,"sur")
 # liste des mots à supprimer
@@ -224,9 +228,9 @@ asupp <- c("sur","que","qu")
 dtm2 <-dtm[, !colnames(dtm) %in% asupp]
 ```
 
-On crée un *dictionnaire* associé au lexique avec la fonction `dictionnary`sans les mots-outils et les mots que l'on a choisit de ne pas analyser.
+On crée le nouveau *dictionnaire* associé au lexique avec la fonction `dictionnary`sans les mots-outils et sans les mots que l'on a choisit de ne pas garder pour l'analyse.
 
-```{r dico, include=FALSE}
+```{r dico}
 dic<-dictionary(dtm,remove_stopwords = T)
 # on enlève les mots de la liste dans le dictionnaire
 dic2 <- dic[!rownames(dic) %in% asupp,]
@@ -234,17 +238,17 @@ dic2 <- dic[!rownames(dic) %in% asupp,]
 
 Pour créér son propre lemmatiseur, on exporte ce dictionnaire (ici dic2.csv) afin de le modifier si besoin, mots après mot (par exemple avec un tableur).
 
-```{r Export_dic, eval=FALSE, include=FALSE}
+```{r Export_dic, eval=FALSE}
 write.csv2(dic2, file="dic2_lem.csv")
 ```
 
 ### Correction de la lemmatisation de R
 
-On remplace les racines des mots (stemmes) issues de la lemmatisation automatique (colonne Term) et on enregiste ce nouveau dictionnaire.
+On pourrait utiliser la colonne Terms du dictionnaire pour lemmatiser mais celle-ci ne nous satisfait pas. On décide alors de remplacer les racines de certians mots issues de la lemmatisation automatique et on enregiste ce nouveau dictionnaire qui sera notre *lemmatiseur personnalisé*.
 
 Ici encore, on s'aide des concordances. Par exemple : `concordances(corpus,dtm,c("écologie","écolo","écologique","écologiques","écologiste","écologistes","écolos"))`
 
-Pour cette analyse, on utilise un lemmatiseur déjà produit lors d'une analyse précédente (avec Spad). On importe ce lemmatiseur dans R. On utilise la fonction `combine_terms`.
+Pour cette analyse, on utilise un lemmatiseur déjà produit lors d'une analyse précédente (avec Spad). On importe ce lemmatiseur dans R et on utilise la fonction `combine_terms` pour lemmatiser.
 
 ```{r import_lem1}
 dic_lem1 <- read.csv2("data/Pee_dic_lem_extract.csv",row.names=1)
@@ -264,9 +268,9 @@ frequent_terms(dtmlem1, n=30)
 
 ### Pour selectionner les mots à analyser
 
-Ici on reprend le tableau lexical et le dictionnaire initiaux (dtm et dic) càd sans suppression de mots au choix ni lemmatisation personnalisée
+Ici on reprend le tableau lexical et le dictionnaire initiaux (dtm et dic) càd sans suppression de mots au choix ni de lemmatisation personnalisée.
 
-On utilise un lemmatiseur qui nous permet dans un premier temps de repérer la catégorie grammaticale de chaque mot du lexique. On peut ensuite ne garder que les mots des catégories qui nous intéressent pour l'analyse (ici les adverbes "ADV", les verbes "VER", les adjectifs "ADJ", les noms "NOM", et les pronoms personnels et possessifs "PRO:per","PRO:pos" ). On gardera pour l'analyse également les mots qui n'ont pas été identifiés grâce à Lexique3 (nr).
+On utilise le lemmatiseur crée à partir de lexique 3 (https://chrplr.github.io/openlexicon/datasets-info/Lexique382/README-Lexique.html) qui nous permet dans un premier temps de repérer la catégorie grammaticale de chaque mot du corpus. On peut ensuite ne garder que les mots des catégories qui nous intéressent pour l'analyse (ici les adverbes *ADV*, les verbes *VER*, les adjectifs *ADJ*, les noms *NOM*, et les pronoms personnels et possessifs *PRO:per*,*PRO:pos*). On gardera pour l'analyse également les mots qui n'ont pas été identifiés grâce à Lexique3 ( mis dans la liste *nr*).
 
 ```{r gram}
 library(dplyr)
@@ -336,7 +340,7 @@ explor::CA_var_plot(res, xax = 1, yax = 2, lev_sup = FALSE, var_sup = FALSE,
 
 ## Correction de la lemmatisation de Lexique3
 
-On adapte le lemmatiseur (`dic_total`) en créant un autre dictionnaire (`dicor`) avec une colonne contenant les mots pas lemmatisés automatiquement. Puis on lemmatisera le tableau lexical avec les "mots" (Term) de cette nouvelle colonne. On peut trouver ces mots dans la liste des mots non reconnus (nr)
+On adapte le lemmatiseur (`dic_total`) en créant un autre dictionnaire (`dicor`) avec une colonne contenant les mots qui n'ont pas été lemmatisés automatiquement. Puis on lemmatisera le tableau lexical avec les "mots" (Term) de cette nouvelle colonne. On trouve ces mots dans la liste des mots non reconnus (nr)
 
 ```{r corr_lemm2}
 dic_total_c <- dic_total
@@ -458,4 +462,3 @@ meta(corpus, "classe") <- cutree_rainette(resrai, k = 10)
 #View(meta(corpus))
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
