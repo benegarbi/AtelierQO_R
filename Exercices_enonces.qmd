@@ -4,7 +4,7 @@ title: "Application avec R.temis dans RStudio"
 
 # Ressources
 
-*Demo Pas à Pas de l'analyse de réponses à la question ouverte K1* [Enquête "Population, Espace de Vie, Environnement", Ined 1992](<https://data.ined.fr/index.php/catalog/41>) avec caractéristiques des répondants : *QO_Pee_K1.html*\
+**Pas à Pas** de l'analyse de réponses à la question ouverte K1 [Enquête "Population, Espace de Vie, Environnement", Ined 1992](<https://data.ined.fr/index.php/catalog/41>) avec caractéristiques des répondants : *QO_Pee_K1.html*\
 et aussi le *Pas à Pas montrant toutes les fonctionnalités de R.temis* appliqué sur un autre texte court <https://rtemis.hypotheses.org/r-temis-dans-rstudio>
 
 ***Extraire les scripts nécessaires des pages citées plus haut***
@@ -21,13 +21,11 @@ et aussi le *Pas à Pas montrant toutes les fonctionnalités de R.temis* appliqu
 
 1.  Créer un répertoire/dossier pour l'analyse sur votre ordinateur. Dans ce dossier, créér un sous répertoire appelé par exemple *data* pour y placer les données à utiliser.
 
-2.  Installer si nécessaire le *package downloadthis.*
+2.  Créer un projet R dans le dossier de l'analyse \[*File/New Project* ...\]. Créer un script \[*File/New File* ...\].
 
-3.  Créer un projet R dans le dossier de l'analyse \[*File/New Project* ...\]. Créer un script \[*File/New File* ...\].
+3.  Visualiser les données extraites de l'enquête PEE (textes et métadonnées) (**PEE_K1_extract.csv***)* et copiez-les dans le répertoire *data.*
 
-4.  Visualiser les données extraites de l'enquête PEE (textes et métadonnées) (**PEE_K1_extract.csv***)* et copiez-les dans le répertoire *data.*
-
-```{r data, echo=FALSE, message=FALSE}
+```{r data, echo=FALSE, message=FALSE, warning=FALSE}
 library(downloadthis)
 download_link(
   link = "https://github.com/benegarbi/AtelierQO_R/tree/main/data",
@@ -55,7 +53,7 @@ On importe ce fichier contenant une variable textuelle et des métadonnées dans
 
 6.  Afficher le nuage de mots associés au lexique `word_cloud`. Faire ce nuage de mots avec et sans les mots-outils. Calculer les éléments qui permettront d'ajouter une légende `frequent_terms`.
 
-## Etape 3 : Reprérer des cooccurrences
+## Etape 3 : Repérer des cooccurrences
 
 1.  Chercher des cooccurrences à certains mots (au choix) `cooc_terms`.
 
@@ -65,7 +63,7 @@ On importe ce fichier contenant une variable textuelle et des métadonnées dans
 
 ## Etape 4 : Utiliser les métadonnées
 
-1.  Visualiser le tableau des métadonnnées `View(meta(corpus))`. Intaller le *package questionr* puis compter le nombre de répondants selon 3 métadonnées (au choix).
+1.  Visualiser le tableau des métadonnnées `View(meta(corpus))`. Compter le nombre de répondants(*package questionr*) selon 3 métadonnées (au choix).
 
 2.  Faire le bilan lexical pour au moins une métadonnée (au choix)`lexical_summary`.
 
@@ -127,4 +125,4 @@ download_link(
 ## Etape 7 : Aller plus loin
 
 -   Travailler sur des sous-corpus
--   Utiliser le package Rainette pour faire la classification sur le tableau lexical <https://juba.github.io/rainette/articles/introduction_usage.html> .............
+-   Utiliser le *package Rainette* pour faire la classification sur le tableau lexical <https://juba.github.io/rainette/articles/introduction_usage.html> .............
