@@ -330,10 +330,10 @@
 <section id="programme" class="slide level2">
 <h2>Programme</h2>
 <ul>
-<li>Statistique textuelle et dataScience</li>
+<li>Statistique textuelle et science des données (data science)</li>
 <li>Corpus et Tableaux lexicaux</li>
 <li>Méthodologie embarquée (dans R)</li>
-<li>Application avec des réponses à une question ouverte issue de l’enquête “<a href="https://data.ined.fr/index.php/catalog/41">Population, Espace de Vie, Environnement</a>” (Collomb, Guerin-Pace, Ined, 1992)</li>
+<li>Application avec des réponses à une question ouverte issue de l’enquête “<a href="https://data.ined.fr/index.php/catalog/41">Populations, Espaces de Vie, Environnements</a>” (Collomb, Guerin-Pace, Ined, 1992)</li>
 <li>Illustrations à partir Garnier B., Guérin-Pace F. 2010 - Appliquer les méthodes de la statistique textuelle, [<a href="http://www.ceped.org/fr/publications-ressources/editions-du-ceped-1988-2012/les-clefs-pour/article/appliquer-les-methodes-de-la">Ceped, les clefs pour</a>], Paris</li>
 </ul>
 </section>
@@ -344,7 +344,11 @@
 <li><strong>Résumer</strong> les données à l’aide d’ indicateurs, de profils</li>
 <li><strong>Présenter</strong> des résultats …</li>
 </ul>
-<p><img src="images/im_nuage_couverture.png" height="200px"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/im_nuage_couverture.png" height="200"></p>
+</figure>
+</div>
 <p>mais aussi :</p>
 <ul>
 <li><strong>Structurer</strong> : le corpus en base de données et le <strong>nettoyer</strong></li>
@@ -352,64 +356,97 @@
 </section>
 <section id="place-de-la-statistique-textuelle" class="slide level2">
 <h2>Place de la Statistique textuelle</h2>
-<p>et si on allait voir ce que dit <a href="https://fr.wikipedia.org/wiki/Science_des_donn%C3%A9es">Wikipedia</a> sur la Science de la donnée</p>
+<p>et si on allait voir ce que dit <a href="https://fr.wikipedia.org/wiki/Science_des_donn%C3%A9es">Wikipedia</a> sur la Science des données</p>
 
 <img data-src="images/wiki_DS.png" width="642" class="r-stretch quarto-figure-center"></section>
 <section id="afficher-des-concordances" class="slide level2">
 <h2>Afficher des concordances</h2>
 <p>Le concordancier : indispensable tout au long d’une analyse de texte, quel qu’il soit :</p>
-<p><img src="images/im_concordancier_lexico3.png" height="500px"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/im_concordancier_lexico3.png" height="500"></p>
+</figure>
+</div>
 </section>
 <section id="analyse-quantitative-de-données-qualitatives" class="slide level2">
 <h2>Analyse quantitative de données qualitatives</h2>
-<p>Calculs d’ <strong>occurrences</strong> = s’intéresser à la <em>forme</em> des textes en faisant abstraction de leur contenu</p>
+<ul>
+<li>Calculs d’ <strong>occurrences</strong> = s’intéresser à la <em>forme</em> des textes en faisant abstraction de leur contenu</li>
+</ul>
 <p>Ex : Attributions d’écrits historiques ou littéraires à un auteur, comparaison et évolution du style de différents auteurs, etc.</p>
-<p>Recherche de <strong>cooccurrences</strong> = faire <em>émerger des structures</em> de textes au-delà de leur forme</p>
+<ul>
+<li>Recherche de <strong>cooccurrences</strong> = faire <em>émerger des structures</em> de textes au-delà de leur forme</li>
+</ul>
 <p>Ex : Analyse des réponses à une question ouverte, analyse d’entretiens, de discours, etc.</p>
 <p>S’appuyer sur des <em>métadonnées</em> sur les textes</p>
 </section>
 <section id="lanalyse-des-données" class="slide level2">
 <h2>L’Analyse des Données</h2>
-<p><img src="images/im_benzecri.png" height="500px"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/im_benzecri.png" height="500"></p>
+</figure>
+</div>
 </section>
 <section id="statistique-textuelle" class="slide level2">
 <h2>Statistique textuelle</h2>
-<p>Pour faire émerger des thématiques au moyen de méthodes statistiques d’analyses multivariées (AFC, CDH) <strong>sans a priori</strong></p>
+<p>Pour faire émerger des thématiques au moyen de méthodes statistiques d’analyses multivariées (Analyses Factorielles, Classifications) <strong>sans a priori</strong></p>
 <p>Logiciels &nbsp;<em>historiques</em>&nbsp; (Spad, Lexico, Alceste, Hyperbase) aujourd’hui <strong>open source</strong> écrits <em>à partir de R</em> (tm, R.temis, TXM, Quanteda, IRaMuteQ ou Xplortext ….)</p>
 <p>Les méthodes s’appliquent à des corpus qui diffèrent par leur nature mais qui sont transformés en tableaux de même structure : les <strong>tableaux lexicaux</strong></p>
 </section>
 <section id="usage-croissant" class="slide level2">
 <h2>Usage croissant</h2>
-<p><img src="images/im_chronologie.png" width="683" height="500"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/im_chronologie.png" width="683" height="500"></p>
+</figure>
+</div>
 </section>
 <section id="text-mining" class="slide level2">
 <h2>Text Mining</h2>
-<p><img src="images/im_ricco.png" height="500px"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/im_ricco.png" height="500"></p>
+</figure>
+</div>
 </section>
 <section id="topic-model" class="slide level2">
 <h2>Topic Model</h2>
 <p>Modèle probabiliste permettant de déterminer des champs lexicaux dans un document (apprentissage automatique - traitement automatique du langage naturel (TLN))</p>
-<p><img src="images/im_topic_modeling.png" height="400px"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/im_topic_modeling.png" height="400"></p>
+</figure>
+</div>
 </section>
 <section id="chaîne-de-traitement-de-textes" class="slide level2">
 <h2>Chaîne de traitement de textes</h2>
-<p><img src="images/im_flochart_text_analysis.png" height="400px"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/im_flochart_text_analysis.png" height="400"></p>
+</figure>
+</div>
 <p><a href="http://www.tidytextmining.com/topicmodeling.html" class="uri">http://www.tidytextmining.com/topicmodeling.html</a></p>
 </section>
 <section id="collecter-corpus-et-métadonnées" class="slide level2">
 <h2>Collecter Corpus et métadonnées</h2>
-<p><em>quels sont les textes les plus semblables en ce qui concerne le vocabulaire et la fréquence des formes utilisées&nbsp;? Quelles sont les formes qui caractérisent chaque texte, par leur présence ou leur absence&nbsp;?</em> (Lebart &amp; Salem, 1994, p.135)</p>
-<p>Les questionner, les contextualiser - disponibilités/droits, sources, limites…</p>
+<p><em>Quels sont les textes les plus semblables en ce qui concerne le vocabulaire et la fréquence des formes utilisées&nbsp;? Quelles sont les formes qui caractérisent chaque texte, par leur présence ou leur absence&nbsp;?</em> (Lebart &amp; Salem, 1994, p.135)</p>
+<p>Ne pas oublier les métadonnées</p>
+<p>Les questionner, les contextualiser : disponibilités/droits, sources, limites…</p>
 </section>
 <section id="nettoyer-les-données" class="slide level2">
 <h2>Nettoyer les données</h2>
 <p>= Etape de l’analyse <em>à ne pas sous-estimer</em></p>
 <p>Diffère selon les types de corpus (questions ouvertes, entretiens, romans, articles, pages Web etc..)</p>
-<p>Textes et metadonnées = nettoyer, normaliser, corriger ( encodage, orthographe, abreviations …)</p>
+<p>= nettoyer, normaliser, corriger ( encodage, orthographe, abreviations …)</p>
 </section>
 <section id="exemple-de-question-ouverte-dans-un-questionnaire" class="slide level2">
 <h2>Exemple de question ouverte dans un questionnaire</h2>
-<p><img src="images/im_pee.png" height="500px"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/im_pee.png" height="500"></p>
+</figure>
+</div>
 </section>
 <section class="slide level2">
 
@@ -434,7 +471,7 @@
 <p><img data-src="images/liste_voc_pee.png" height="400"></p>
 </figure>
 </div>
-<p>Lecture des mots par ordre de fréquence<em>occurrence</em>, ordre <em>alphabétique</em>.</p>
+<p>Lecture des mots par ordre de fréquence (<em>occurrence)</em>, ordre <em>alphabétique</em>.</p>
 </section>
 <section id="méthodologie-embarquée" class="slide level2">
 <h2>Méthodologie embarquée</h2>
@@ -458,9 +495,10 @@
 </section>
 <section id="analyse-des-correspondances-sur-le-tableau-lexical-entier" class="slide level2">
 <h2>Analyse des correspondances sur le tableau lexical entier</h2>
-<p>Les plans factoriels permettent de visualiser des proximités de mots, des oppositions et ainsi de repérer des <strong>champs lexicaux</strong>.</p>
+<p>Les plans factoriels permettent de visualiser des proximités de mots, des oppositions et ainsi de repérer des <strong>champs lexicaux</strong></p>
 
-<img data-src="images/spgeo_0046-2497_1998_num_27_1_T1_0044_0000_1.png" class="r-stretch quarto-figure-center"><p>(Enquête Population- Espaces de vie- Environnement, Ined, 1992) Deux mots sont d’autant plus proches que leurs contextes d’utilisation se ressemblent et d’autant plus éloignés qu’ils seront rarement utilisés ensemble</p>
+<img data-src="images/spgeo_0046-2497_1998_num_27_1_T1_0044_0000_1.png" width="902" class="r-stretch quarto-figure-center"><p>(Enquête Populations, Espaces de vie, Environnements, Ined 1992)</p>
+<p>Deux mots sont d’autant plus proches que leurs contextes d’utilisation se ressemblent et d’autant plus éloignés qu’ils seront rarement utilisés ensemble</p>
 </section>
 <section id="classification-sur-tableau-lexical" class="slide level2">
 <h2>Classification sur Tableau Lexical</h2>
@@ -480,18 +518,20 @@
 <h2>Les spécificités</h2>
 <p>Utilisation d’un test statistique pour dire si l’écart entre la fréquence relative d’une forme dans une partition (<em>par modalité</em>) et la fréquence globale calculée sur l’ensemble des réponses est significatif ou non</p>
 
-<img data-src="images/specif.png" width="429" class="r-stretch quarto-figure-center"><p>les <em>mots ou textes caractéristiques</em> de ces partitions sont restitués selon leur degré de spécificité</p>
+<img data-src="images/specif.png" width="429" class="r-stretch quarto-figure-center"><p>(Enquête Populations, Espaces de vie, Environnements, Ined 1992)</p>
+<p>Les <em>mots ou textes caractéristiques</em> de ces partitions sont restitués selon leur degré de spécificité</p>
 </section>
 <section id="le-tableau-lexical-agrégé-tla" class="slide level2">
 <h2>Le tableau lexical agrégé (TLA)</h2>
 <p>Tableau de <em>contingence</em> qui croise les <em>mots</em> du lexique et les <em>modalités</em> des métadonnées.</p>
 
-<img data-src="images/TLA_PEE.png" width="960" class="r-stretch quarto-figure-center"><p>(Population, Espace de vie, Environnement,Ined)</p>
+<img data-src="images/TLA_PEE.png" width="960" class="r-stretch quarto-figure-center"><p>(Populations, Espaces de vie, Environnements, Ined, 1992)</p>
 </section>
 <section id="analyse-des-correspondances-sur-un-tableau-lexical-agrégé" class="slide level2">
 <h2>Analyse des correspondances sur un Tableau Lexical Agrégé</h2>
 <p>Le plan factoriel permet d’observer la position réciproque des “mots” et des métadonnées et de faire émerger des champs lexicaux propres à des sous-populations</p>
 <p><img src="images/spgeo_0046-2497_1998_num_27_1_T1_0050_0000_1.png" height="500px"></p>
+<p>(Enquête Populations, Espaces de vie, Environnements, Ined 1992)</p>
 <ul>
 <li>2 mots proches = proximité des individus - profils lignes</li>
 <li>2 caractéristiques proches = univers lexicaux proches - profils colonnes</li>
@@ -500,10 +540,10 @@
 <section id="affiner-lanalyse" class="slide level2">
 <h2>Affiner l’analyse</h2>
 <ul>
-<li>Supprimer certains mots ….</li>
-<li>Augmenter le nombre de classes</li>
-<li>Personnaliser la lemmatisation …..</li>
-<li>Extraire des sous-corpus à l’aide metadonnées</li>
+<li>Supprimer certains mots …</li>
+<li>Augmenter le nombre de classes …</li>
+<li>Personnaliser la lemmatisation …</li>
+<li>Extraire des sous-corpus à l’aide metadonnées …</li>
 </ul>
 </section>
 <section id="les-outils" class="slide level2">
@@ -511,7 +551,7 @@
 <p>Liste non exhaustive</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/im_outils.png" height="400"></p>
+<p><img data-src="images/im_outils.png" width="564" height="500"></p>
 </figure>
 </div>
 </section>
@@ -525,7 +565,7 @@
 </section>
 <section id="package-r.temis-de-r" class="slide level2">
 <h2>Package R.temis de R</h2>
-<p>Facilite les étapes essentielles de l’analyse textuelle en s’appuyant au maximum sur les packages existants (tm, FactoMineR, explor, igraph…). <a href="https://rtemis.hypotheses.org/">R.Temis</a> implémente les méthodes suivantes :</p>
+<p>Facilite les étapes essentielles de l’analyse textuelle en s’appuyant au maximum sur les packages existants (tm, FactoMineR, explor, igraph…). <a href="https://rtemis.hypotheses.org/">R.temis</a> implémente les méthodes suivantes :</p>
 <ul>
 <li>importation de corpus au format .csv, .txt, Alceste</li>
 <li>suppression des mots vides,</li>

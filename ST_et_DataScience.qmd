@@ -9,10 +9,10 @@ format:
 
 ## Programme
 
--   Statistique textuelle et dataScience
+-   Statistique textuelle et science des données (data science)
 -   Corpus et Tableaux lexicaux
 -   Méthodologie embarquée (dans R)
--   Application avec des réponses à une question ouverte issue de l'enquête "[Population, Espace de Vie, Environnement](https://data.ined.fr/index.php/catalog/41)" (Collomb, Guerin-Pace, Ined, 1992)
+-   Application avec des réponses à une question ouverte issue de l'enquête "[Populations, Espaces de Vie, Environnements](https://data.ined.fr/index.php/catalog/41)" (Collomb, Guerin-Pace, Ined, 1992)
 -   Illustrations à partir Garnier B., Guérin-Pace F. 2010 - Appliquer les méthodes de la statistique textuelle, \[[Ceped, les clefs pour](http://www.ceped.org/fr/publications-ressources/editions-du-ceped-1988-2012/les-clefs-pour/article/appliquer-les-methodes-de-la)\], Paris
 
 ------------------------------------------------------------------------
@@ -23,7 +23,7 @@ format:
 -   **Résumer** les données à l'aide d' indicateurs, de profils
 -   **Présenter** des résultats ...
 
-<img src="images/im_nuage_couverture.png" height="200px"/>
+![](images/im_nuage_couverture.png){fig-align="center" height="200"}
 
 mais aussi :
 
@@ -33,7 +33,7 @@ mais aussi :
 
 ## Place de la Statistique textuelle
 
-et si on allait voir ce que dit [Wikipedia](https://fr.wikipedia.org/wiki/Science_des_donn%C3%A9es) sur la Science de la donnée
+et si on allait voir ce que dit [Wikipedia](https://fr.wikipedia.org/wiki/Science_des_donn%C3%A9es) sur la Science des données
 
 ![](images/wiki_DS.png){fig-align="center" width="642"}
 
@@ -43,17 +43,17 @@ et si on allait voir ce que dit [Wikipedia](https://fr.wikipedia.org/wiki/Scienc
 
 Le concordancier : indispensable tout au long d'une analyse de texte, quel qu'il soit :
 
-<img src="images/im_concordancier_lexico3.png" height="500px"/>
+![](images/im_concordancier_lexico3.png){fig-align="center" height="500"}
 
 ------------------------------------------------------------------------
 
 ## Analyse quantitative de données qualitatives
 
-Calculs d' **occurrences** = s'intéresser à la *forme* des textes en faisant abstraction de leur contenu
+-   Calculs d' **occurrences** = s'intéresser à la *forme* des textes en faisant abstraction de leur contenu
 
 Ex : Attributions d'écrits historiques ou littéraires à un auteur, comparaison et évolution du style de différents auteurs, etc.
 
-Recherche de **cooccurrences** = faire *émerger des structures* de textes au-delà de leur forme
+-   Recherche de **cooccurrences** = faire *émerger des structures* de textes au-delà de leur forme
 
 Ex : Analyse des réponses à une question ouverte, analyse d'entretiens, de discours, etc.
 
@@ -63,13 +63,13 @@ S'appuyer sur des *métadonnées* sur les textes
 
 ## L'Analyse des Données
 
-<img src="images/im_benzecri.png" height="500px"/>
+![](images/im_benzecri.png){fig-align="center" height="500"}
 
 ------------------------------------------------------------------------
 
 ## Statistique textuelle
 
-Pour faire émerger des thématiques au moyen de méthodes statistiques d'analyses multivariées (AFC, CDH) **sans a priori**
+Pour faire émerger des thématiques au moyen de méthodes statistiques d'analyses multivariées (Analyses Factorielles, Classifications) **sans a priori**
 
 Logiciels  *historiques*  (Spad, Lexico, Alceste, Hyperbase) aujourd'hui **open source** écrits *à partir de R* (tm, R.temis, TXM, Quanteda, IRaMuteQ ou Xplortext ....)
 
@@ -79,13 +79,13 @@ Les méthodes s'appliquent à des corpus qui diffèrent par leur nature mais qui
 
 ## Usage croissant
 
-<img src="images/im_chronologie.png" width="683" height="500"/>
+![](images/im_chronologie.png){fig-align="center" width="683" height="500"}
 
 ------------------------------------------------------------------------
 
 ## Text Mining
 
-<img src="images/im_ricco.png" height="500px"/>
+![](images/im_ricco.png){fig-align="center" height="500"}
 
 ------------------------------------------------------------------------
 
@@ -93,13 +93,13 @@ Les méthodes s'appliquent à des corpus qui diffèrent par leur nature mais qui
 
 Modèle probabiliste permettant de déterminer des champs lexicaux dans un document (apprentissage automatique - traitement automatique du langage naturel (TLN))
 
-<img src="images/im_topic_modeling.png" height="400px"/>
+![](images/im_topic_modeling.png){fig-align="center" height="400"}
 
 ------------------------------------------------------------------------
 
 ## Chaîne de traitement de textes
 
-<img src="images/im_flochart_text_analysis.png" height="400px"/>
+![](images/im_flochart_text_analysis.png){fig-align="center" height="400"}
 
 <http://www.tidytextmining.com/topicmodeling.html>
 
@@ -107,9 +107,11 @@ Modèle probabiliste permettant de déterminer des champs lexicaux dans un docum
 
 ## Collecter Corpus et métadonnées
 
-*quels sont les textes les plus semblables en ce qui concerne le vocabulaire et la fréquence des formes utilisées ? Quelles sont les formes qui caractérisent chaque texte, par leur présence ou leur absence ?* (Lebart & Salem, 1994, p.135)
+*Quels sont les textes les plus semblables en ce qui concerne le vocabulaire et la fréquence des formes utilisées ? Quelles sont les formes qui caractérisent chaque texte, par leur présence ou leur absence ?* (Lebart & Salem, 1994, p.135)
 
-Les questionner, les contextualiser - disponibilités/droits, sources, limites...
+Ne pas oublier les métadonnées
+
+Les questionner, les contextualiser : disponibilités/droits, sources, limites...
 
 ------------------------------------------------------------------------
 
@@ -119,13 +121,13 @@ Les questionner, les contextualiser - disponibilités/droits, sources, limites..
 
 Diffère selon les types de corpus (questions ouvertes, entretiens, romans, articles, pages Web etc..)
 
-Textes et metadonnées = nettoyer, normaliser, corriger ( encodage, orthographe, abreviations ...)
+= nettoyer, normaliser, corriger ( encodage, orthographe, abreviations ...)
 
 ------------------------------------------------------------------------
 
 ## Exemple de question ouverte dans un questionnaire
 
-<img src="images/im_pee.png" height="500px"/>
+![](images/im_pee.png){fig-align="center" height="500"}
 
 ------------------------------------------------------------------------
 
@@ -147,7 +149,7 @@ Tableaux dits *hyper-creux*. Présence/absence de **mots** dans les textes (Vale
 
 ![](images/liste_voc_pee.png){fig-align="center" height="400"}
 
-Lecture des mots par ordre de fréquence*occurrence*, ordre *alphabétique*.
+Lecture des mots par ordre de fréquence (*occurrence)*, ordre *alphabétique*.
 
 ------------------------------------------------------------------------
 
@@ -173,11 +175,13 @@ Opération **automatisée** avec des dictionnaires et/ou manuelle
 
 ## Analyse des correspondances sur le tableau lexical entier
 
-Les plans factoriels permettent de visualiser des proximités de mots, des oppositions et ainsi de repérer des **champs lexicaux**.
+Les plans factoriels permettent de visualiser des proximités de mots, des oppositions et ainsi de repérer des **champs lexicaux**
 
-![](images/spgeo_0046-2497_1998_num_27_1_T1_0044_0000_1.png){fig-align="center"}
+![](images/spgeo_0046-2497_1998_num_27_1_T1_0044_0000_1.png){fig-align="center" width="902"}
 
-(Enquête Population- Espaces de vie- Environnement, Ined, 1992) Deux mots sont d'autant plus proches que leurs contextes d'utilisation se ressemblent et d'autant plus éloignés qu'ils seront rarement utilisés ensemble
+(Enquête Populations, Espaces de vie, Environnements, Ined 1992)
+
+Deux mots sont d'autant plus proches que leurs contextes d'utilisation se ressemblent et d'autant plus éloignés qu'ils seront rarement utilisés ensemble
 
 ------------------------------------------------------------------------
 
@@ -190,7 +194,7 @@ Les plans factoriels permettent de visualiser des proximités de mots, des oppos
 Méthode Alceste ( Reinert, 1983), aujourd'hui implantée dans le *package Rainette* (J. Barnier)
 
 ------------------------------------------------------------------------
-                                         
+
 # Mettre en relation mots et métadonnées
 
 ------------------------------------------------------------------------
@@ -201,7 +205,9 @@ Utilisation d'un test statistique pour dire si l'écart entre la fréquence rela
 
 ![](images/specif.png){fig-align="center" width="429"}
 
-les *mots ou textes caractéristiques* de ces partitions sont restitués selon leur degré de spécificité
+(Enquête Populations, Espaces de vie, Environnements, Ined 1992)
+
+Les *mots ou textes caractéristiques* de ces partitions sont restitués selon leur degré de spécificité
 
 ------------------------------------------------------------------------
 
@@ -211,7 +217,7 @@ Tableau de *contingence* qui croise les *mots* du lexique et les *modalités* de
 
 ![](images/TLA_PEE.png){fig-align="center" width="960"}
 
-(Population, Espace de vie, Environnement,Ined)
+(Populations, Espaces de vie, Environnements, Ined, 1992)
 
 ------------------------------------------------------------------------
 
@@ -221,6 +227,8 @@ Le plan factoriel permet d'observer la position réciproque des "mots" et des m�
 
 <img src="images/spgeo_0046-2497_1998_num_27_1_T1_0050_0000_1.png" height="500px"/>
 
+(Enquête Populations, Espaces de vie, Environnements, Ined 1992)
+
 -   2 mots proches = proximité des individus - profils lignes
 -   2 caractéristiques proches = univers lexicaux proches - profils colonnes
 
@@ -228,10 +236,10 @@ Le plan factoriel permet d'observer la position réciproque des "mots" et des m�
 
 ## Affiner l'analyse
 
-- Supprimer certains mots ....
-- Augmenter le nombre de classes
-- Personnaliser la lemmatisation .....
-- Extraire des sous-corpus à l'aide metadonnées
+-   Supprimer certains mots ...
+-   Augmenter le nombre de classes ...
+-   Personnaliser la lemmatisation ...
+-   Extraire des sous-corpus à l'aide metadonnées ...
 
 ------------------------------------------------------------------------
 
@@ -239,7 +247,7 @@ Le plan factoriel permet d'observer la position réciproque des "mots" et des m�
 
 Liste non exhaustive
 
-![](images/im_outils.png){fig-align="center" height="400"}
+![](images/im_outils.png){fig-align="center" width="564" height="500"}
 
 ------------------------------------------------------------------------
 
@@ -254,7 +262,7 @@ Feinerer, Hornik, Meyer Wirtschaftsuniversity de Wien, in Journal of Statistical
 
 ## Package R.temis de R
 
-Facilite les étapes essentielles de l'analyse textuelle en s'appuyant au maximum sur les packages existants (tm, FactoMineR, explor, igraph...). [R.Temis](https://rtemis.hypotheses.org/) implémente les méthodes suivantes :
+Facilite les étapes essentielles de l'analyse textuelle en s'appuyant au maximum sur les packages existants (tm, FactoMineR, explor, igraph...). [R.temis](https://rtemis.hypotheses.org/) implémente les méthodes suivantes :
 
 -   importation de corpus au format .csv, .txt, Alceste
 -   suppression des mots vides,
