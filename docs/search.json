@@ -11,14 +11,14 @@
     "href": "Exercices_enonces.html",
     "title": "Application avec R.temis dans RStudio",
     "section": "",
-    "text": "Demo Pas à Pas de l’analyse de réponses à la question ouverte K1 Enquête “Population, Espace de Vie, Environnement”, Ined 1992 avec caractéristiques des répondants : QO_Pee_K1.html\net aussi le Pas à Pas montrant toutes les fonctionnalités de R.temis appliqué sur un autre texte court https://rtemis.hypotheses.org/r-temis-dans-rstudio\nExtraire les scripts nécessaires des pages citées plus haut\nFichiers fournis\n\nExtrait des données de l’enquête : PEE_K1_extract.csv\nLemmatiseur construit à partir du lexique associé aux données : Pee_dic_lem_extract.csv\nLemmatiseur adapté de Lexique 3 base de données lexicales du français contenant des représentations orthographiques et phonémiques, des lemmes associés ainsi que leur catégorie grammaticale … : Lexique383_simplifié.csv\n\n\n\n\nCréer un répertoire/dossier pour l’analyse sur votre ordinateur. Dans ce dossier, créér un sous répertoire appelé par exemple data pour y placer les données à utiliser.\nInstaller si nécessaire le package downloadthis.\nCréer un projet R dans le dossier de l’analyse [File/New Project …]. Créer un script [File/New File …].\nVisualiser les données extraites de l’enquête PEE (textes et métadonnées) (PEE_K1_extract.csv) et copiez-les dans le répertoire data.\n\n\n\nWarning: le package 'downloadthis' a été compilé avec la version R 4.1.3\n\n\n\n visualiser les données puis copier-coller dans un éditeur de texte\n\n\n\n\n\n\nOn importe ce fichier contenant une variable textuelle et des métadonnées dans R avec le package R.temis.\n\nImporter le fichier import_corpus.\nCréer le tableau lexical (avec mots-outils) build_dtm.\nRepérer le nombre de répondants et le nombre de mots différents cités dans les réponses.\nCréer le dictionnaire dictionary puis le visualiser View. Le trier, repérer les mots les plus cités, les lemmes générés par R.\nAfficher des concordances avec des mots (au choix) concordances.\nAfficher le nuage de mots associés au lexique word_cloud. Faire ce nuage de mots avec et sans les mots-outils. Calculer les éléments qui permettront d’ajouter une légende frequent_terms.\n\n\n\n\n\nChercher des cooccurrences à certains mots (au choix) cooc_terms.\nProduire un graphe de mots pour détecter les cooccurrences autour des mots les plus fréquents terms_graph. Que remarquez-vous ?\nFaire une analyse factorielle sur le tableau lexical corpus_ca puis explorer les résulats avec l’interface explor. Afficher des concordances concordances.\n\n\n\n\n\nVisualiser le tableau des métadonnnées View(meta(corpus)). Intaller le package questionr puis compter le nombre de répondants selon 3 métadonnées (au choix).\nFaire le bilan lexical pour au moins une métadonnée (au choix)lexical_summary.\nRepérer le vocabulaire spécifique pour quelques métadonnées (au choix)specific_terms.\nFaire une analyse factorielle sur le tableau croisant les mots du lexique et des caractéristiques des répondants (au choix) corpus_ca. Explorer les résulats explor. Afficher des concordances concordances, des réponses spécifiques extreme_docs.\n\n\n\n\nIl s’agit ici d’affiner peu à peu l’analyse en supprimant des mots et/ou en modifiant la lemmatisation.\n\n\n\nCréer une la liste de mots à enlever du corpus (prendre ici : “sur”,“que”,“qu”). La supprimer du tableau lexical et du lexique, puis exporter le dictionnaire dictionary.\nOuvrir ce dictionnaire avec un tableur. Corrigez si besoin les formes lemmatisées automatiquement par R.\nOuvrir le lemmatiseur “associé à Pee” (Pee_dic_lem_extract.csv) et le copier dans le répertoire data du dossier créé pour l’analyse.\n\n\n\n\n visualiser les données puis copier-coller dans un éditeur de texte\n\n\n\n4. Puis l’importer dans le projet (toujours le répertoire data) read.csv2.\n\nLemmatiser le tableau lexical à l’aide de ce lemmatiseur combine_terms.\nCompter le nombre de mots distincts restants après cette lemmatisation par exemple avec lexical_summary\nExcécuter des analyses précédentes avec ce nouveau lexique\n\n\n\n\n\nOuvrir le lemmatiseur adapté de lexique3 (Lexique383_simplifie.csv) et le copier dans le répertoire data du dossier créé pour l’analyse\n\n\n\n\n visualiser les données puis copier-coller dans un éditeur de texte\n\n\n\n\nGarder les mots de catégories grammaticales “utiles” et lemmatiser à nouveau le dictionnaire issu du tableau lexical initial\nRelancer quelques analyses au choix….\n\n\n\n\n\n\nFaire une classification sur le tableau lexical associé aux réponses avec corpus_ca. Décrire les classe specific_terms puis joindre exporter la variable de classe aux metadonnées..\n\n\n\n\n\nTravailler sur des sous-corpus\nUtiliser le package Rainette pour faire la classification sur le tableau lexical https://juba.github.io/rainette/articles/introduction_usage.html …………."
+    "text": "Pas à Pas de l’analyse de réponses à la question ouverte K1 Enquête “Population, Espace de Vie, Environnement”, Ined 1992 avec caractéristiques des répondants : QO_Pee_K1.html\net aussi le Pas à Pas montrant toutes les fonctionnalités de R.temis appliqué sur un autre texte court https://rtemis.hypotheses.org/r-temis-dans-rstudio\nExtraire les scripts nécessaires des pages citées plus haut\nFichiers fournis\n\nExtrait des données de l’enquête : PEE_K1_extract.csv\nLemmatiseur construit à partir du lexique associé aux données : Pee_dic_lem_extract.csv\nLemmatiseur adapté de Lexique 3 base de données lexicales du français contenant des représentations orthographiques et phonémiques, des lemmes associés ainsi que leur catégorie grammaticale … : Lexique383_simplifié.csv\n\n\n\n\nCréer un répertoire/dossier pour l’analyse sur votre ordinateur. Dans ce dossier, créér un sous répertoire appelé par exemple data pour y placer les données à utiliser.\nInstaller si nécessaire le package downloadthis.\nCréer un projet R dans le dossier de l’analyse [File/New Project …]. Créer un script [File/New File …].\nVisualiser les données extraites de l’enquête PEE (textes et métadonnées) (PEE_K1_extract.csv) et copiez-les dans le répertoire data.\n\n\n\nWarning: le package 'downloadthis' a été compilé avec la version R 4.1.3\n\n\n\n visualiser les données puis copier-coller dans un éditeur de texte\n\n\n\n\n\n\nOn importe ce fichier contenant une variable textuelle et des métadonnées dans R avec le package R.temis.\n\nImporter le fichier import_corpus.\nCréer le tableau lexical (avec mots-outils) build_dtm.\nRepérer le nombre de répondants et le nombre de mots différents cités dans les réponses.\nCréer le dictionnaire dictionary puis le visualiser View. Le trier, repérer les mots les plus cités, les lemmes générés par R.\nAfficher des concordances avec des mots (au choix) concordances.\nAfficher le nuage de mots associés au lexique word_cloud. Faire ce nuage de mots avec et sans les mots-outils. Calculer les éléments qui permettront d’ajouter une légende frequent_terms.\n\n\n\n\n\nChercher des cooccurrences à certains mots (au choix) cooc_terms.\nProduire un graphe de mots pour détecter les cooccurrences autour des mots les plus fréquents terms_graph. Que remarquez-vous ?\nFaire une analyse factorielle sur le tableau lexical corpus_ca puis explorer les résulats avec l’interface explor. Afficher des concordances concordances.\n\n\n\n\n\nVisualiser le tableau des métadonnnées View(meta(corpus)). Intaller le package questionr puis compter le nombre de répondants selon 3 métadonnées (au choix).\nFaire le bilan lexical pour au moins une métadonnée (au choix)lexical_summary.\nRepérer le vocabulaire spécifique pour quelques métadonnées (au choix)specific_terms.\nFaire une analyse factorielle sur le tableau croisant les mots du lexique et des caractéristiques des répondants (au choix) corpus_ca. Explorer les résulats explor. Afficher des concordances concordances, des réponses spécifiques extreme_docs.\n\n\n\n\nIl s’agit ici d’affiner peu à peu l’analyse en supprimant des mots et/ou en modifiant la lemmatisation.\n\n\n\nCréer une la liste de mots à enlever du corpus (prendre ici : “sur”,“que”,“qu”). La supprimer du tableau lexical et du lexique, puis exporter le dictionnaire dictionary.\nOuvrir ce dictionnaire avec un tableur. Corrigez si besoin les formes lemmatisées automatiquement par R.\nOuvrir le lemmatiseur “associé à Pee” (Pee_dic_lem_extract.csv) et le copier dans le répertoire data du dossier créé pour l’analyse.\n\n\n\n\n visualiser les données puis copier-coller dans un éditeur de texte\n\n\n\n4. Puis l’importer dans le projet (toujours le répertoire data) read.csv2.\n\nLemmatiser le tableau lexical à l’aide de ce lemmatiseur combine_terms.\nCompter le nombre de mots distincts restants après cette lemmatisation par exemple avec lexical_summary\nExcécuter des analyses précédentes avec ce nouveau lexique\n\n\n\n\n\nOuvrir le lemmatiseur adapté de lexique3 (Lexique383_simplifie.csv) et le copier dans le répertoire data du dossier créé pour l’analyse\n\n\n\n\n visualiser les données puis copier-coller dans un éditeur de texte\n\n\n\n\nGarder les mots de catégories grammaticales “utiles” et lemmatiser à nouveau le dictionnaire issu du tableau lexical initial\nRelancer quelques analyses au choix….\n\n\n\n\n\n\nFaire une classification sur le tableau lexical associé aux réponses avec corpus_ca. Décrire les classe specific_terms puis joindre exporter la variable de classe aux metadonnées..\n\n\n\n\n\nTravailler sur des sous-corpus\nUtiliser le package Rainette pour faire la classification sur le tableau lexical https://juba.github.io/rainette/articles/introduction_usage.html …………."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Analyser des questions ouvertes au moyen de la statistique textuelle",
     "section": "",
-    "text": "L'objectif de cet atelier de 3h est d'acquérir les clés pour explorer les réponses à une question ouverte dans une enquête au moyen de la statistique textelle.\nLa mise en pratique des méthodes se fait au moyen du package R.temis.\nBénédicte Garnier (Ined)"
+    "text": "L'objectif de cet atelier de 4h est de comprendre les concepts mis en oeuvre en statistique textuelle et d'acquérir les clés pour explorer par étapes des textes courts.\nLa mise en pratique des méthodes se fait au moyen du package R.temis.\nBénédicte Garnier (Ined)"
   },
   {
     "objectID": "Intro.html",
@@ -179,7 +179,7 @@
     "href": "ST_et_DataScience.html#programme",
     "title": "Statistique textuelle et data Science",
     "section": "Programme",
-    "text": "Programme\n\nStatistique textuelle et dataScience\nCorpus et Tableaux lexicaux\nMéthodologie embarquée (dans R)\nApplication avec des réponses à une question ouverte issue de l’enquête “Population, Espace de Vie, Environnement” (Collomb, Guerin-Pace, Ined, 1992)"
+    "text": "Programme\n\nStatistique textuelle et dataScience\nCorpus et Tableaux lexicaux\nMéthodologie embarquée (dans R)\nApplication avec des réponses à une question ouverte issue de l’enquête “Population, Espace de Vie, Environnement” (Collomb, Guerin-Pace, Ined, 1992)\nIllustrations à partir Garnier B., Guérin-Pace F. 2010 - Appliquer les méthodes de la statistique textuelle, [Ceped, les clefs pour], Paris"
   },
   {
     "objectID": "ST_et_DataScience.html#enjeux-de-la-statistique-textuelle",
@@ -224,11 +224,11 @@
     "text": "Statistique textuelle\nPour faire émerger des thématiques au moyen de méthodes statistiques d’analyses multivariées (AFC, CDH) sans a priori\nLogiciels  historiques  (Spad, Lexico, Alceste, Hyperbase) aujourd’hui open source écrits à partir de R (tm, R.temis, TXM, Quanteda, IRaMuteQ ou Xplortext ….)\nLes méthodes s’appliquent à des corpus qui diffèrent par leur nature mais qui sont transformés en tableaux de même structure : les tableaux lexicaux"
   },
   {
-    "objectID": "ST_et_DataScience.html#usage-croissant-de-la-statistique-textuelle",
-    "href": "ST_et_DataScience.html#usage-croissant-de-la-statistique-textuelle",
+    "objectID": "ST_et_DataScience.html#usage-croissant",
+    "href": "ST_et_DataScience.html#usage-croissant",
     "title": "Statistique textuelle et data Science",
-    "section": "Usage croissant de la statistique textuelle",
-    "text": "Usage croissant de la statistique textuelle"
+    "section": "Usage croissant",
+    "text": "Usage croissant"
   },
   {
     "objectID": "ST_et_DataScience.html#text-mining",
@@ -277,7 +277,7 @@
     "href": "ST_et_DataScience.html#le-tableau-lexical-entier-tle",
     "title": "Statistique textuelle et data Science",
     "section": "Le tableau lexical entier (TLE)",
-    "text": "Le tableau lexical entier (TLE)\nTableaux dits hyper-creux. Présence/absence de mots dans les textes (Valeur positive ou nulle). L’ordre des mots n’est pas pris en compte (sacs de mots)"
+    "text": "Le tableau lexical entier (TLE)\n\nTableaux dits hyper-creux. Présence/absence de mots dans les textes (Valeur positive ou nulle). L’ordre des mots n’est pas pris en compte (sacs de mots)"
   },
   {
     "objectID": "ST_et_DataScience.html#lecture-du-lexique",
@@ -298,21 +298,28 @@
     "href": "ST_et_DataScience.html#analyse-des-correspondances-sur-le-tableau-lexical-entier",
     "title": "Statistique textuelle et data Science",
     "section": "Analyse des correspondances sur le tableau lexical entier",
-    "text": "Analyse des correspondances sur le tableau lexical entier\nLes plans factoriels permettent de visualiser des proximités de mots, des oppositions et ainsi de repérer des champs lexicaux.\n\n\n\n\n\n(Enquête Population- Espaces de vie- Environnement, Ined, 1992) Deux mots sont d’autant plus proches que leurs contextes d’utilisation se ressemblent et d’autant plus éloignés qu’ils seront rarement utilisés ensemble"
+    "text": "Analyse des correspondances sur le tableau lexical entier\nLes plans factoriels permettent de visualiser des proximités de mots, des oppositions et ainsi de repérer des champs lexicaux.\n\n(Enquête Population- Espaces de vie- Environnement, Ined, 1992) Deux mots sont d’autant plus proches que leurs contextes d’utilisation se ressemblent et d’autant plus éloignés qu’ils seront rarement utilisés ensemble"
   },
   {
     "objectID": "ST_et_DataScience.html#classification-sur-tableau-lexical",
     "href": "ST_et_DataScience.html#classification-sur-tableau-lexical",
     "title": "Statistique textuelle et data Science",
     "section": "Classification sur Tableau Lexical",
-    "text": "Classification sur Tableau Lexical\nObtenir un classement des unités de textes en fonction de la ressemblance ou de la dissemblance des mots dans ces textes et d’ordonner les textes en cernant les homologies et les oppositions (Rouré, Reinert, 1993)\n\n\n\n\n\nMéthode Alceste ( Reinert, 1983), aujourd’hui implantée dans le package Rainette (J. Barnier)\n\n\n\n# Mettre en relation mots et métadonnées"
+    "text": "Classification sur Tableau Lexical\nObtenir un classement des unités de textes en fonction de la ressemblance ou de la dissemblance des mots dans ces textes et d’ordonner les textes en cernant les homologies et les oppositions (Rouré, Reinert, 1993)\n\nMéthode Alceste ( Reinert, 1983), aujourd’hui implantée dans le package Rainette (J. Barnier)"
+  },
+  {
+    "objectID": "ST_et_DataScience.html#les-spécificités",
+    "href": "ST_et_DataScience.html#les-spécificités",
+    "title": "Statistique textuelle et data Science",
+    "section": "Les spécificités",
+    "text": "Les spécificités\nUtilisation d’un test statistique pour dire si l’écart entre la fréquence relative d’une forme dans une partition (par modalité) et la fréquence globale calculée sur l’ensemble des réponses est significatif ou non\n\nles mots ou textes caractéristiques de ces partitions sont restitués selon leur degré de spécificité"
   },
   {
     "objectID": "ST_et_DataScience.html#le-tableau-lexical-agrégé-tla",
     "href": "ST_et_DataScience.html#le-tableau-lexical-agrégé-tla",
     "title": "Statistique textuelle et data Science",
     "section": "Le tableau lexical agrégé (TLA)",
-    "text": "Le tableau lexical agrégé (TLA)\nTableau de contingence qui croise les mots du lexique et les modalités des métadonnées.\n\n\n\n\n\n(Population, Espace de vie, Environnement,Ined)"
+    "text": "Le tableau lexical agrégé (TLA)\nTableau de contingence qui croise les mots du lexique et les modalités des métadonnées.\n\n(Population, Espace de vie, Environnement,Ined)"
   },
   {
     "objectID": "ST_et_DataScience.html#analyse-des-correspondances-sur-un-tableau-lexical-agrégé",
@@ -326,14 +333,14 @@
     "href": "ST_et_DataScience.html#affiner-lanalyse",
     "title": "Statistique textuelle et data Science",
     "section": "Affiner l’analyse",
-    "text": "Affiner l’analyse\n\nSupprimer certains mots ….\nPersonnaliser la lemmatisation …..\nExtraire des sous-corpus à l’aide metadonnées"
+    "text": "Affiner l’analyse\n\nSupprimer certains mots ….\nAugmenter le nombre de classes\nPersonnaliser la lemmatisation …..\nExtraire des sous-corpus à l’aide metadonnées"
   },
   {
     "objectID": "ST_et_DataScience.html#les-outils",
     "href": "ST_et_DataScience.html#les-outils",
     "title": "Statistique textuelle et data Science",
     "section": "Les outils",
-    "text": "Les outils\nListe non exhaustive\n\n\n\net aussi la plateforme TXM et les packages Quanteda, xplortext …"
+    "text": "Les outils\nListe non exhaustive"
   },
   {
     "objectID": "ST_et_DataScience.html#package-tm-text-mining-de-r",
@@ -347,14 +354,14 @@
     "href": "ST_et_DataScience.html#package-r.temis-de-r",
     "title": "Statistique textuelle et data Science",
     "section": "Package R.temis de R",
-    "text": "Package R.temis de R\nFacilite les étapes essentielles de l’analyse textuelle en s’appuyant au maximum sur les packages existants (tm, FactoMineR, explor, igraph…)\nR.Temis implémente les méthodes suivantes :\n\nimportation de corpus au format .csv, .txt, Alceste\nsuppression des mots vides,\nlemmatisation automatique et modifiable\nbilan lexical, spécificités, concordances\nnuage de mots\ndétection de cooccurrences,\nconstruction de sous-corpus à partir de termes\ndécoupage des textes en paragraphes\nanalyse des correspondances sur tableau lexical entier ou agrégé\nclassification\ngraphes de mots"
+    "text": "Package R.temis de R\nFacilite les étapes essentielles de l’analyse textuelle en s’appuyant au maximum sur les packages existants (tm, FactoMineR, explor, igraph…). R.Temis implémente les méthodes suivantes :\n\nimportation de corpus au format .csv, .txt, Alceste\nsuppression des mots vides,\nlemmatisation automatique et modifiable\nbilan lexical, spécificités, concordances\nnuage de mots\ndétection de cooccurrences,\nconstruction de sous-corpus à partir de termes\ndécoupage des textes en paragraphes\nanalyse des correspondances sur tableau lexical\nclassification\ngraphes de mots"
   },
   {
     "objectID": "ST_et_DataScience.html#conclusion",
     "href": "ST_et_DataScience.html#conclusion",
     "title": "Statistique textuelle et data Science",
     "section": "Conclusion",
-    "text": "Conclusion\n\nStatistique textuelle à l’honneur\nAnalyse de données (non structurées)\nExplorer les données autrement - sans a priori\nComplémentarité des méthodes (qualitative/quantitative)\nExploration ultra-rapide des corpus mais pré connaissance du corpus irremplaçable pour faire des choix de paramétrage et interpréter les résultats produits\nUtilisation conjointe de l’informatique tout-automatique et de l’intuition humaine"
+    "text": "Conclusion\n\nAnalyse de données (non structurées)\nExplorer les données autrement - sans a priori\nComplémentarité des méthodes (qualitative/quantitative)\nUtilisation conjointe de l’informatique tout-automatique et de l’intuition humaine"
   },
   {
     "objectID": "ST_et_DataScience.html#statistique-textuelle-quali-quanti-viz",
@@ -362,12 +369,5 @@
     "title": "Statistique textuelle et data Science",
     "section": "Statistique textuelle : Quali + Quanti + Viz",
     "text": "Statistique textuelle : Quali + Quanti + Viz\nCalculs statistiques appliqués à des corpus\n\nChiffres & Mots : Occurrences & Cooccurrences, …\nCalcul de spécificités, profils, …\nVisualisations : nuages de mots, graphe de mots, plan factoriels (Analyse des correspondances), dendrogrammes (classifications)\n\nAides à l’interprétation indispensables : les concordances"
-  },
-  {
-    "objectID": "ST_et_DataScience.html",
-    "href": "ST_et_DataScience.html",
-    "title": "Statistique textuelle et data Science",
-    "section": "",
-    "text": "Statistique textuelle et dataScience\nCorpus et Tableaux lexicaux\nMéthodologie embarquée (dans R)\nApplication avec des réponses à une question ouverte issue de l’enquête “Population, Espace de Vie, Environnement” (Collomb, Guerin-Pace, Ined, 1992)"
   }
 ]
