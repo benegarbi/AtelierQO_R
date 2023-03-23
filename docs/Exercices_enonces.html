@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Initiation a la Statistique Textuelle - Application avec R.temis dans RStudio</title>
+<title>Initiation à la Statistique Textuelle - Application avec R.temis dans RStudio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -58,7 +121,6 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script src="site_libs/font-awesome-5.13.0/js/script.js"></script>
 
 
 </head>
@@ -71,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Initiation a la Statistique Textuelle</span>
+    <span class="navbar-title">Initiation à la Statistique Textuelle</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -97,6 +159,13 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./biblio.html">Ressources</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/benegarbi/AtelierQO_R"><i class="bi bi-github" role="img">
+</i> 
+ </a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -165,19 +234,19 @@ et aussi le <em>Pas à Pas montrant toutes les fonctionnalités de R.temis</em> 
 <ol type="1">
 <li><p>Créer un répertoire/dossier pour l’analyse sur votre ordinateur. Dans ce dossier, créér un sous répertoire appelé par exemple <em>data</em> pour y placer les données à utiliser.</p></li>
 <li><p>Créer un projet R dans le dossier de l’analyse [<em>File/New Project</em> …]. Créer un script [<em>File/New File</em> …].</p></li>
-<li><p>Visualiser les données extraites de l’enquête PEE (textes et métadonnées) (<strong>PEE_K1_extract.csv</strong><em>)</em> et copiez-les dans le répertoire <em>data.</em></p></li>
+<li><p>Télécharger les données extraites de l’enquête PEE (textes et métadonnées) (<strong>PEE_K1_extract.csv</strong><em>)</em> dans le répertoire <em>data</em> en exécutant le script ci-dessous.</p></li>
 </ol>
 <div class="cell">
-<div class="cell-output-display">
-<a href="https://github.com/benegarbi/AtelierQO_R/tree/main/data">
-<button class="btn btn-default"><i class="fa fa-save"></i> visualiser les données puis copier-coller dans un éditeur de texte</button>
-</a>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>PEE_K1_extract <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/benegarbi/AtelierQO_R/master/data/PEE_K1_extract.csv"</span>, <span class="at">sep=</span><span class="st">";"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv2</span>(PEE_K1_extract,<span class="at">file=</span><span class="st">"data/PEE_K1_extract.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
+<p>Visualiser les données à traiter</p>
 </section>
 <section id="etape-2-importer-les-données-dans-r" class="level2">
 <h2 class="anchored" data-anchor-id="etape-2-importer-les-données-dans-r">Etape 2 : Importer les données dans R</h2>
-<p>On importe ce fichier contenant une variable textuelle et des métadonnées dans R avec le <em>package R.temis</em><strong>.</strong></p>
+<p>Importer ce fichier contenant une variable textuelle et des métadonnées avec le <em>package R.temis</em>.</p>
 <ol type="1">
 <li><p>Importer le fichier <code>import_corpus</code>.</p></li>
 <li><p>Créer le tableau lexical (avec mots-outils) <code>build_dtm</code>.</p></li>
@@ -212,16 +281,12 @@ et aussi le <em>Pas à Pas montrant toutes les fonctionnalités de R.temis</em> 
 <ol type="1">
 <li><p>Créer une la liste de mots à enlever du corpus (prendre ici : “sur”,“que”,“qu”). La supprimer du tableau lexical et du lexique, puis exporter le dictionnaire <code>dictionary</code>.</p></li>
 <li><p>Ouvrir ce dictionnaire avec un tableur. Corrigez si besoin les formes lemmatisées automatiquement par R.</p></li>
-<li><p>Ouvrir le lemmatiseur “associé à Pee” (<strong>Pee_dic_lem_extract.csv)</strong> et le copier dans le répertoire data du dossier créé pour l’analyse.</p></li>
+<li><p>Récupérer le lemmatiseur “associé à Pee” (<strong>Pee_dic_lem_extract.csv)</strong> et le copier dans le répertoire data du dossier créé pour l’analyse. et l’importer dans le projet (toujours le répertoire data) <code>read.csv2</code>. Pour cela, exécuter le scipt ci-dessous.</p></li>
 </ol>
 <div class="cell">
-<div class="cell-output-display">
-<a href="https://github.com/benegarbi/AtelierQO_R/tree/main/data">
-<button class="btn btn-default"><i class="fa fa-save"></i> visualiser les données puis copier-coller dans un éditeur de texte</button>
-</a>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dic_lem1 <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"https://raw.githubusercontent.com/benegarbi/AtelierQO_R/master/data/Pee_dic_lem_extract.csv"</span>, <span class="at">sep=</span><span class="st">";"</span>,<span class="at">row.names=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>4. Puis l’importer dans le projet (toujours le répertoire data) <code>read.csv2</code>.</p>
 <ol start="5" type="1">
 <li>Lemmatiser le tableau lexical à l’aide de ce lemmatiseur <code>combine_terms</code>.</li>
 <li>Compter le nombre de mots distincts restants après cette lemmatisation par exemple avec <code>lexical_summary</code></li>
@@ -231,14 +296,10 @@ et aussi le <em>Pas à Pas montrant toutes les fonctionnalités de R.temis</em> 
 <section id="avec-lexique3" class="level3">
 <h3 class="anchored" data-anchor-id="avec-lexique3">Avec Lexique3</h3>
 <ol type="1">
-<li>Ouvrir le lemmatiseur adapté de lexique3 (<strong>Lexique383_simplifie.csv</strong>) et le copier dans le répertoire data du dossier créé pour l’analyse</li>
+<li>Récupérer le lemmatiseur adapté de lexique3 (<strong>Lexique383_simplifie.csv</strong>) dans le répertoire data de l’analyse en exécutant le script.</li>
 </ol>
 <div class="cell">
-<div class="cell-output-display">
-<a href="https://github.com/benegarbi/AtelierQO_R/tree/main/data">
-<button class="btn btn-default"><i class="fa fa-save"></i> visualiser les données puis copier-coller dans un éditeur de texte</button>
-</a>
-</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>lexique3 <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"https://raw.githubusercontent.com/benegarbi/AtelierQO_R/master/data/Lexique383_simplifie.csv"</span>, <span class="at">sep=</span><span class="st">","</span>, <span class="at">fileEncoding=</span><span class="st">"UTF-8"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li>Garder les mots de catégories grammaticales “utiles” et lemmatiser à nouveau le dictionnaire issu du tableau lexical initial</li>
