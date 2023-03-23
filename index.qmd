@@ -1,11 +1,10 @@
 ---
 title: "Analyser des questions ouvertes au moyen de la statistique textuelle"
-
 ---
 
 ![](images/Colloque%20sondages.png){fig-align="center"}
 
-L\'objectif de cet atelier de 4h est de comprendre les concepts mis en oeuvre en statistique textuelle et d\'acquérir les clés pour explorer par étapes des textes courts.
+L'objectif de cet atelier de 4h est de comprendre les concepts mis en oeuvre en statistique textuelle et d'acquérir les clés pour explorer par étapes des textes courts.
 
 La mise en pratique des méthodes se fait au moyen du *package R.temis*.
 

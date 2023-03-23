@@ -1,8 +1,6 @@
 ---
-title: "Bibliographie"
+title: "Quelques ressources"
 ---
-
-# Quelques Ressources
 
 ## Méthodes
 
@@ -62,18 +60,30 @@ title: "Bibliographie"
 
 -   Projet Textometrie : <http://textometrie.ens-lyon.fr/>
 
--   Cours de Ricco Rakotomalala : <http://tutoriels-data-science.blogspot.com/p/tutoriels-en-francais.html#6585408001920926626>
+-   Le [Descriptoire](http://perso.ens-lyon.fr/lise.vaudor/Descriptoire/_book/) : Recueil et analyse de texte avec R
+
+-   [Cours](http://tutoriels-data-science.blogspot.com/p/tutoriels-en-francais.html#6585408001920926626) de Ricco Rakotomalala
 
 <!-- -->
 
--   Package R.temis : <http://rtemis.hypotheses.org/>
+Les **packages**
 
--   Package quanteda : <https://quanteda.io/reference/quanteda-package.html>
+-   [R.temis](http://rtemis.hypotheses.org/)
 
--   Pakage Rainette (Classification *Alceste*) : <https://juba.github.io/rainette/index.html>
+-   [quanteda](http://quanteda.io/reference/quanteda-package.html)
 
--   Package Xplortext : <http://www.xplortext.org/>
+-   [Rainette](http://juba.github.io/rainette/index.html)
 
--   IRaMuTeQ : <http://www.iramuteq.org/>
+-   [Xplortext](http://www.xplortext.org/)
 
--   Voyant-Tools, environnement en ligne de lecture et d'analyse de textes numériques : <https://voyant-tools.org/>
+Les autres outils
+
+-   [IRaMuTeQ](http://www.iramuteq.org/)
+
+-   [Voyant-Tools](http://voyant-tools.org/) : environnement en ligne de lecture et d'analyse de textes
+
+et les **séminaires :**
+
+-   [R à l'Usage des Sciences Sociales](http://russ.site.ined.fr/) (RUSS)
+
+-   Les [Rencontres de Statistique Appliquée](http://statapp.site.ined.fr/fr/) (RSA)

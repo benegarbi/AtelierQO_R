@@ -23,23 +23,21 @@ et aussi le *Pas à Pas montrant toutes les fonctionnalités de R.temis* appliqu
 
 2.  Créer un projet R dans le dossier de l'analyse \[*File/New Project* ...\]. Créer un script \[*File/New File* ...\].
 
-3.  Visualiser les données extraites de l'enquête PEE (textes et métadonnées) (**PEE_K1_extract.csv***)* et copiez-les dans le répertoire *data.*
+3. Télécharger les données extraites de l'enquête PEE (textes et métadonnées) (**PEE_K1_extract.csv***)* dans le répertoire *data* en exécutant le script ci-dessous.
 
-```{r data, echo=FALSE, message=FALSE, warning=FALSE}
-library(downloadthis)
-download_link(
-  link = "https://github.com/benegarbi/AtelierQO_R/tree/main/data",
-  button_label = "visualiser les données puis copier-coller dans un éditeur de texte",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE
-)
+```{r data, eval=FALSE,message=FALSE}
+library(readr)
+PEE_K1_extract <- read.csv("https://raw.githubusercontent.com/benegarbi/AtelierQO_R/master/data/PEE_K1_extract.csv", sep=";")
+
+write.csv2(PEE_K1_extract,file="data/PEE_K1_extract.csv")
 ```
+
+Visualiser les données à traiter
+
 
 ## Etape 2 : Importer les données dans R
 
-On importe ce fichier contenant une variable textuelle et des métadonnées dans R avec le *package R.temis***.**
+Importer ce fichier contenant une variable textuelle et des métadonnées avec le *package R.temis*.
 
 1.  Importer le fichier `import_corpus`.
 
@@ -81,20 +79,15 @@ Il s'agit ici d'affiner peu à peu l'analyse en supprimant des mots et/ou en mod
 
 2.  Ouvrir ce dictionnaire avec un tableur. Corrigez si besoin les formes lemmatisées automatiquement par R.
 
-3.  Ouvrir le lemmatiseur "associé à Pee" (**Pee_dic_lem_extract.csv)** et le copier dans le répertoire data du dossier créé pour l'analyse.
+3.  Récupérer le lemmatiseur "associé à Pee" (**Pee_dic_lem_extract.csv)** et le copier dans le répertoire data du dossier créé pour l'analyse.
+et l'importer dans le projet (toujours le répertoire data) `read.csv2`.
+Pour cela, exécuter le scipt ci-dessous.
 
-```{r lempers, echo=FALSE, message=FALSE}
-download_link(
-  link = "https://github.com/benegarbi/AtelierQO_R/tree/main/data",
-  button_label = "visualiser les données puis copier-coller dans un éditeur de texte",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE
-)
+```{r lempers, eval=FALSE,message=FALSE}
+library(readr)
+dic_lem1 <- read.csv2("https://raw.githubusercontent.com/benegarbi/AtelierQO_R/master/data/Pee_dic_lem_extract.csv", sep=";",row.names=1)
 ```
 
-4\. Puis l'importer dans le projet (toujours le répertoire data) `read.csv2`.
 
 5.  Lemmatiser le tableau lexical à l'aide de ce lemmatiseur `combine_terms`.
 6.  Compter le nombre de mots distincts restants après cette lemmatisation par exemple avec `lexical_summary`
@@ -102,18 +95,12 @@ download_link(
 
 ### Avec Lexique3
 
-1.  Ouvrir le lemmatiseur adapté de lexique3 (**Lexique383_simplifie.csv**) et le copier dans le répertoire data du dossier créé pour l'analyse
+1.  Récupérer le lemmatiseur adapté de lexique3 (**Lexique383_simplifie.csv**) dans le répertoire data de l'analyse en exécutant le script.
 
-```{r lemlex3, echo=FALSE, message=FALSE}
-download_link(
-  link = "https://github.com/benegarbi/AtelierQO_R/tree/main/data",
-  button_label = "visualiser les données puis copier-coller dans un éditeur de texte",
-  button_type = "default",
-  has_icon = TRUE,
-  icon = "fa fa-save",
-  self_contained = FALSE
-)
+```{r lemlex3, eval=FALSE,message=FALSE}
+lexique3 <- read.csv2("https://raw.githubusercontent.com/benegarbi/AtelierQO_R/master/data/Lexique383_simplifie.csv", sep=",", fileEncoding="UTF-8")
 ```
+
 
 2.  Garder les mots de catégories grammaticales "utiles" et lemmatiser à nouveau le dictionnaire issu du tableau lexical initial
 3.  Relancer quelques analyses au choix....

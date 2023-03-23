@@ -3,7 +3,7 @@ project:
   output-dir: docs
   
 website:
-  title: "Initiation a la Statistique Textuelle"
+  title: "Initiation à la Statistique Textuelle"
   
   navbar:
     type: inverse
@@ -19,6 +19,9 @@ website:
         
       - text: "Ressources"
         href: biblio.html
+    right:
+      - icon: github
+        href: https://github.com/benegarbi/AtelierQO_R
 format:
   html: 
     theme: cosmo

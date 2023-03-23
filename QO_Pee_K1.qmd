@@ -14,10 +14,10 @@ Le *corpus* utilisé dans cet exemple contient un extrait des réponses à une q
 
 Pour chaque enquêté, on dispose de caractéristiques socio-démographiques (<https://data.ined.fr/index.php/catalog/41>).
 
-Les données sont stockées dans un tableau, dit *individus x variables*, contenant 2017 lignes (le nombre de répondants) et 15 colonnes. Ces colonnes correspondent aux variables suivantes : identifiant du questionnaire, caractéristiques des répondants (ou *métadonnées*) et en 15ème colonne la variable correspondant à la question ouverte ( *variable textuelle*). Les textes des réponses constituent le *corpus*.
+Les données sont stockées dans un tableau, dit *individus x variables*, contenant 2017 lignes (le nombre de répondants) et 16 colonnes. Ces colonnes correspondent aux variables suivantes : identifiant du questionnaire, caractéristiques des répondants (ou *métadonnées*) et en 16ème colonne la variable correspondant à la question ouverte ( *variable textuelle*). Les textes des réponses constituent le *corpus*.
 
 ```{r import}
-corpus <- import_corpus("data/PEE_K1_extract.csv", format="csv",textcolumn=15,language="fr")
+corpus <- import_corpus("data/PEE_K1_extract.csv", format="csv",textcolumn=16,language="fr")
 ```
 
 # Création du tableau lexical
